@@ -3,7 +3,7 @@
 //итоговый каталог для заказчика
 // динамическое имя с именем общего каталога (выяснить как внести его в гит игнор)
 // let project_folder = require("path").basename(__dirname);
-let project_folder = "dist";
+let project_folder = "result";
 //каталог исходников
 let source_folder = "#src";
 
@@ -71,6 +71,7 @@ let { src, dest } = require('gulp'),
     ttf2woff = require("gulp-ttf2woff"),
     ttf2woff2 = require("gulp-ttf2woff2"),
     fonter = require("gulp-fonter");
+
 
 //Функция, которая будет обновлять страницу
 function browserSync(params) {
@@ -240,7 +241,7 @@ function watchFiles(params) {
     gulp.watch([path.watch.img], images);
 }
 
-//Функция, кот. будет чистить(удалять) папку dist
+//Функция, кот. будет чистить(удалять) папку result
 function clean(params) {
     return del(path.clean);
 }
