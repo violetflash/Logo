@@ -1,4 +1,4 @@
-@@include('dynamic-adapt.js')
+// @@include('dynamic-adapt.js')
 
 // функция определения поддержки WebP
 //Добавляет к <body> класс webp, если браузер поддерживает webp
