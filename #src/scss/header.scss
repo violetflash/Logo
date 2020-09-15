@@ -139,6 +139,7 @@
 	// .bottom-header__container
 	&__container {
 		display: flex;
+		align-items: center;
 	}
 	// .bottom-header__column
 	&__column {
@@ -153,8 +154,21 @@
 }
 .actions-header {
 	display: flex;
+	align-items: center;
+
 	// .actions-header__login
 	&__login {
+		background: url('../images/icons/header/login.png') left no-repeat;
+		display: inline-block;
+		line-height: 24px;
+		padding-left: 36px;
+		span {
+			color: #999999;
+			font-size: 14px;
+			font-weight: 300;
+			line-height: 18px;
+			border-bottom: 1px dotted;
+		}
 	}
 	// .actions-header__register
 	&__register {
@@ -165,7 +179,6 @@
 }
 .info-header {
 	display: flex;
-	align-items: center;
 	// .info-header__column
 	&__column {
 	}
@@ -184,7 +197,10 @@
 			height: 20px;
 			background: url('../images/icons/header/callback.png') left no-repeat;
 			left: 0;
-			bottom: 5px;
+			bottom: -5px;
+		}
+		span {
+			border-bottom: 1px dotted #1ab9ce ;
 		}
 	}
 	// .info-header__schedule
