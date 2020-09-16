@@ -1,6 +1,7 @@
 //=========================================================================
 .header {
   background: url("../images/bg_header.jpg") top no-repeat;
+
   &__top {
   }
 
@@ -52,6 +53,9 @@
   &__list {
     display: grid;
     grid-template-columns: 110px 130px 180px;
+    @media (max-width: $md1+px) {
+      grid-template-columns: 90px 110px 160px;
+    }
 
     li {
       margin-bottom: 2px;
@@ -71,6 +75,9 @@
     // line-height: 18px;
     transition: all 0.3s ease 0s;
     white-space: nowrap;
+    @media (max-width: $md1+px) {
+      padding: 0 10px;
+    }
 
     span {
       position: relative;
@@ -101,15 +108,26 @@
 .contacts-header {
   display: flex;
   justify-content: center;
+
   &__item {
     color: #fff;
     line-height: 18px;
-    padding: 0 34px 0 38px;
+    padding: 0 35px;
+    @media (max-width: $md1+px) {
+      padding: 0 15px;
+      &--icon {
+        padding-left: 25px;
+        background-size: 10px;
+
+        &::before {
+          transform: scale(.8);
+        }
+      }
+    }
 
     &--icon {
       border-right: 1px solid #fff;
       position: relative;
-
 
       &::before {
         position: absolute;
@@ -121,8 +139,9 @@
         bottom: 5px;
         transition: all .3s ease 0s;
       }
+
       &:hover::before {
-        transform: scale(1.3) rotate(20deg);
+        transform: scale(1.2) rotate(20deg) translateY(-15%);
       }
     }
   }
@@ -141,6 +160,10 @@
     font-size: 18px;
     font-weight: 900;
     text-transform: uppercase;
+    white-space: nowrap;
+    @media (max-width: $md1+px) {
+      font-size: 16px;
+    }
   }
 }
 
@@ -156,6 +179,9 @@
 
   &__column {
     flex: 0 1 calc(50% - 100px);
+    @media (max-width: $md1+px) {
+      flex: 0 1 calc(50% - 60px);
+    }  
   }
 
   &__actions {
@@ -171,9 +197,9 @@
 
   li {
     &:not(:last-child) {
-      margin: 0 50px 0 0;
+      margin: 0 54px 0 0;
       @media (max-width: $maxWidthContainer+px) { //FIXME: responsive margin (is it useful?)
-        margin: 0 54 / $maxWidthContainer * 100vw 0 0;
+        margin: 0 30 / $maxWidthContainer * 100vw 0 0;
       }
     }
   }
@@ -184,6 +210,7 @@
     padding-left: 36px;
     color: #999999;
     transition: all .3s ease 0s;
+
     &:hover {
       color: #1ab9ce;
     }
@@ -200,6 +227,7 @@
 
   &__login {
     background: url('../images/icons/header/login-default.png') left no-repeat;
+
     &:hover {
       background: url('../images/icons/header/login-hover.png') left no-repeat;
     }
@@ -208,6 +236,7 @@
 
   &__register {
     background: url('../images/icons/header/user-default.png') left no-repeat;
+
     &:hover {
       background: url('../images/icons/header/user-hover.png') left no-repeat;
     }
@@ -216,6 +245,7 @@
 
   &__email {
     background: url('../images/icons/header/mail-default.png') left no-repeat;
+
     &:hover {
       background: url('../images/icons/header/mail-hover.png') left no-repeat;
     }
@@ -231,7 +261,7 @@
     &:not(:last-child) {
       padding: 0 40px 0 0;
       @media (max-width: $maxWidthContainer+px) { //FIXME: responsive padding (is it useful?)
-        padding: 0 40 / $maxWidthContainer * 100vw 0 0;
+        padding: 0 30 / $maxWidthContainer * 100vw 0 0;
       }
     }
   }
@@ -260,6 +290,7 @@
     color: #999999;
     font-size: 12px;
     font-weight: 300;
+
     span {
       font-weight: 900;
       line-height: 18px;
@@ -271,11 +302,10 @@
   &__cart {
     display: inline-block;
     padding: 0 41px 0 0;
-    //line-height: 39px;
     width: 39px;
     height: 39px;
-    z-index: 1;
     position: relative;
+
     &::before {
       content: '';
       position: absolute;
@@ -285,26 +315,78 @@
       width: 39px;
       height: 39px;
       border-radius: 50%;
+      transition: all .3s ease 0s;
+      @media (max-width: 1200px) {
+        background-color: transparent;
+      }
     }
+
     &::after {
       position: absolute;
       content: '';
       background: url('../images/icons/header/cart-default.png') center center no-repeat;
       width: 39px;
       height: 39px;
+      transition: all .3s ease 0s;
+      @media (max-width: 1200px) {
+        z-index: 1;
+        background: url('../images/icons/header/cart-hover.png') center center no-repeat;
+      }
     }
+
     span {
       position: absolute;
       padding: 0 12px;
       background-color: #f68038;
       color: #fff;
+      font-size: 18px;
       font-weight: 700;
       height: 24px;
       line-height: 24px;
       border-radius: 20px;
       right: 5px;
       top: 0;
-      z-index: 5;
+      z-index: 2;
+      transition: all .3s ease 0s;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 0.5px 0 rgba(255, 255, 255, 1);
+      @media (max-width: 1200px) {
+        right: 38px;
+        top: -10px;
+        z-index: 1;
+      }
+    }
+
+    &:hover {
+      &::before {
+        background-color: transparent;
+      }
+
+      span {
+        right: 38px;
+        top: -10px;
+        z-index: 1;
+      }
+
+      &::after {
+        z-index: 1;
+        background: url('../images/icons/header/cart-hover.png') center center no-repeat;
+      }
+    }
+  }
+}
+
+@media (max-width: $md1+px) {
+  .webp .info-header {
+    &__schedule {
+      background: none;
+      padding: 0;
+    }
+  }
+
+  .no-webp .info-header {
+    &__schedule {
+      background: none;
+      padding: 0;
     }
   }
 }

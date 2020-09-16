@@ -108,9 +108,6 @@ function css() {
             })
         )
         .pipe(
-            group_media()
-        )
-        .pipe(
             autoprefixer({
                 overrideBrowserslist: ["last 5 versions"],
                 cascade: true
@@ -121,6 +118,9 @@ function css() {
                 webpClass: '.webp',
                 noWebpClass: '.no-webp'
             }))
+        .pipe(
+            group_media()
+        )
         .pipe(dest(path.build.css)) //выгрузка
         .pipe(clean_css())
         .pipe(
