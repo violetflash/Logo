@@ -269,24 +269,42 @@
 
   // .info-header__cart
   &__cart {
-    background: url('../images/icons/header/cart-default.png') left no-repeat;
-
-
+    display: inline-block;
+    padding: 0 41px 0 0;
+    //line-height: 39px;
+    width: 39px;
+    height: 39px;
+    z-index: 1;
     position: relative;
     &::before {
       content: '';
       position: absolute;
       background-color: #4da0b9;
-      width: 39px;
       left: 0;
+      top: 0;
+      width: 39px;
       height: 39px;
       border-radius: 50%;
-      z-index: -1;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      background: url('../images/icons/header/cart-default.png') center center no-repeat;
+      width: 39px;
+      height: 39px;
     }
     span {
       position: absolute;
-      right: 0;
+      padding: 0 12px;
+      background-color: #f68038;
+      color: #fff;
+      font-weight: 700;
+      height: 24px;
+      line-height: 24px;
+      border-radius: 20px;
+      right: 5px;
       top: 0;
+      z-index: 5;
     }
   }
 }
