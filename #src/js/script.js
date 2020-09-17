@@ -18,3 +18,9 @@ testWebP(function (support) {
     }
 });
 
+let burger = document.querySelector('.icon-menu');
+
+burger.onclick = function () {
+    burger.classList.toggle('_active');
+}
+

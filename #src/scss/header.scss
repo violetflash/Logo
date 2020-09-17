@@ -48,6 +48,15 @@
   }
 
   &__body {
+    @media (max-width: $md2+px) {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      overflow: auto;
+      display: none;
+    }
   }
 
   &__list {
@@ -103,11 +112,56 @@
 }
 
 .icon-menu {
+  display: none;
+  @media (max-width: $md2+px) {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 5;
+    span {
+      transition: all 0.3s ease 0s;
+      top: calc(50% - 1.5px);
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+
+      &:first-child {
+        top: 0;
+      }
+
+      &:last-child {
+        top: auto;
+        bottom: 0;
+      }
+    }
+    &._active {
+      span {
+        transform: scale(0);
+
+        &:first-child {
+          transform: rotate(-45deg);
+          top: calc(50% - 2px);
+        }
+
+        &:last-child {
+          transform: rotate(45deg);
+          bottom: calc(50% - 1px);
+        }
+      }
+    }
+  }
 }
 
 .contacts-header {
   display: flex;
   justify-content: center;
+  @media (max-width: $md2+px) {
+    flex-direction: column;
+  }  
 
   &__item {
     color: #fff;
@@ -115,33 +169,48 @@
     padding: 0 35px;
     @media (max-width: $md1+px) {
       padding: 0 15px;
-      &--icon {
-        padding-left: 25px;
-        background-size: 10px;
-
-        &::before {
-          transform: scale(.8);
-        }
-      }
     }
+    
+    @media (max-width: $md2+px) {
+      text-align: center;
+    }  
 
     &--icon {
       border-right: 1px solid #fff;
-      position: relative;
-
-      &::before {
-        position: absolute;
-        content: "";
-        width: 19px;
-        height: 25px;
-        background: url("../images/icons/header/phone.png") left no-repeat;
-        left: 0;
-        bottom: 5px;
-        transition: all .3s ease 0s;
+      @media (max-width: $md2+px) {
+        border-right: none;
+        margin: 0 0 10px 0;
       }
 
-      &:hover::before {
-        transform: scale(1.2) rotate(20deg) translateY(-15%);
+      .contacts-header__phone {
+        padding: 0 0 0 38px;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 19px;
+          height: 25px;
+          background: url("../images/icons/header/phone.png") left no-repeat;
+          left: 0;
+          bottom: 5px;
+          transition: all .3s ease 0s;
+          @media (max-width: $md1+px) {
+            transform: scale(.8);
+          }
+          @media (max-width: $md2+px) {
+            bottom: -17px;
+            transform: scale(1.3);
+          }  
+        }
+
+        &:hover::before {
+          transform: scale(1.2) rotate(20deg) translateY(-15%);
+        }
+      }
+
+      .contacts-header__label {
+        padding-left: 38px;
       }
     }
   }
@@ -151,6 +220,9 @@
     font-size: 12px;
     font-weight: 300;
     margin-bottom: 5px;
+    @media (max-width: $md2+px) {
+      display: none;
+    }
   }
 
   &__phone {
@@ -164,6 +236,9 @@
     @media (max-width: $md1+px) {
       font-size: 16px;
     }
+    @media (max-width: $md2+px) {
+      padding: 0 0 0 38px;
+    }  
   }
 }
 
@@ -180,8 +255,8 @@
   &__column {
     flex: 0 1 calc(50% - 100px);
     @media (max-width: $md1+px) {
-      flex: 0 1 calc(50% - 60px);
-    }  
+      flex: 0 1 calc(50% - 80px);
+    }
   }
 
   &__actions {
@@ -204,12 +279,16 @@
     }
   }
 
-  &__action {
+  &__item {
     display: inline-block;
     line-height: 24px;
-    padding-left: 36px;
+    padding: 0 0 0 36px;
     color: #999999;
     transition: all .3s ease 0s;
+    @media (max-width: $md2+px) {
+      background: none;
+      padding: 0 0 0 0px;
+    }
 
     &:hover {
       color: #1ab9ce;
@@ -222,32 +301,35 @@
       line-height: 18px;
       border-bottom: 1px dotted;
     }
-  }
 
+    &--login {
+      background: url('../images/icons/header/login-default.png') left no-repeat;
 
-  &__login {
-    background: url('../images/icons/header/login-default.png') left no-repeat;
-
-    &:hover {
-      background: url('../images/icons/header/login-hover.png') left no-repeat;
+      &:hover {
+        background: url('../images/icons/header/login-hover.png') left no-repeat;
+      }
     }
-  }
 
 
-  &__register {
-    background: url('../images/icons/header/user-default.png') left no-repeat;
+    &--register {
+      background: url('../images/icons/header/user-default.png') left no-repeat;
 
-    &:hover {
-      background: url('../images/icons/header/user-hover.png') left no-repeat;
+      &:hover {
+        background: url('../images/icons/header/user-hover.png') left no-repeat;
+      }
     }
-  }
 
 
-  &__email {
-    background: url('../images/icons/header/mail-default.png') left no-repeat;
+    &--email {
+      background: url('../images/icons/header/mail-default.png') left no-repeat;
 
-    &:hover {
-      background: url('../images/icons/header/mail-hover.png') left no-repeat;
+      span {
+        border-bottom: 1px solid;
+      }
+
+      &:hover {
+        background: url('../images/icons/header/mail-hover.png') left no-repeat;
+      }
     }
   }
 }
@@ -290,6 +372,12 @@
     color: #999999;
     font-size: 12px;
     font-weight: 300;
+    @media (max-width: $md1+px) {
+      background: none;
+    }
+    @media (max-width: $md2+px) {
+      display: none;
+    }
 
     span {
       font-weight: 900;
@@ -305,6 +393,27 @@
     width: 39px;
     height: 39px;
     position: relative;
+    @media (max-width: 1200px) {
+      padding: 0;
+    }
+    @media (min-width: 1201px) {
+      &:hover {
+        &::before {
+          background-color: transparent;
+        }
+
+        span {
+          right: 40px;
+          top: -10px;
+          z-index: 1;
+        }
+
+        &::after {
+          z-index: 1;
+          background: url('../images/icons/header/cart-hover.png') center center no-repeat;
+        }
+      }
+    }
 
     &::before {
       content: '';
@@ -350,89 +459,14 @@
       transition: all .3s ease 0s;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 0.5px 0 rgba(255, 255, 255, 1);
       @media (max-width: 1200px) {
-        right: 38px;
+        right: -1px;
         top: -10px;
         z-index: 1;
-      }
-    }
-
-    &:hover {
-      &::before {
-        background-color: transparent;
-      }
-
-      span {
-        right: 38px;
-        top: -10px;
-        z-index: 1;
-      }
-
-      &::after {
-        z-index: 1;
-        background: url('../images/icons/header/cart-hover.png') center center no-repeat;
       }
     }
   }
 }
 
-@media (max-width: $md1+px) {
-  .webp .info-header {
-    &__schedule {
-      background: none;
-      padding: 0;
-    }
-  }
 
-  .no-webp .info-header {
-    &__schedule {
-      background: none;
-      padding: 0;
-    }
-  }
-}
 
-/*
-//==BURGER-MENU========================================================
-.icon-menu {
-	display: none;
-	@media (max-width: $md3+px) {
-		display: block;
-		position: absolute;
-		top: 18px;
-		right: 10px;
-		width: 30px;
-		height: 18px;
-		cursor: pointer;
-		z-index: 5;
-		span {
-			transition: all 0.3s ease 0s;
-			top: calc(50% - 1px);
-			left: 0;
-			position: absolute;
-			width: 100%;
-			height: 2px;
-			background-color: #000;
-			&:first-child {
-				top: 0;
-			}
-			&:last-child {
-				top: auto;
-				bottom: 0;
-			}
-		}
-		&._active {
-			span {
-				transform: scale(0);
-				&:first-child {
-					transform: rotate(-45deg);
-					top: calc(50% - 1px);
-				}
-				&:last-child {
-					transform: rotate(45deg);
-					bottom: calc(50% - 1px);
-				}
-			}
-		}
-	}
-}*/
 

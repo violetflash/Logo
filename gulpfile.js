@@ -115,7 +115,7 @@ function css() {
         )
         .pipe(
             webpcss({
-                webpClass: '.webp',
+                webpClass: '',
                 noWebpClass: '.no-webp'
             }))
         .pipe(
