@@ -1,3 +1,10 @@
+// @@include('files/regular.js', {})
+// @@include('files/script.js', {})
+// @@include('files/functions.js', {})
+// @@include('files/forms.js', {})
+// @@include('files/scroll.js', {})
+// @@include('files/dynamic-adapt.js', {})
+
 // @@include('dynamic-adapt.js')
 
 // функция определения поддержки WebP
@@ -19,8 +26,11 @@ testWebP(function (support) {
 });
 
 let burger = document.querySelector('.icon-menu');
+let burger_menu = document.querySelector('.menu__body');
 
 burger.onclick = function () {
     burger.classList.toggle('_active');
+    burger_menu.classList.toggle('_active');
 }
+
 
