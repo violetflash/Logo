@@ -28,6 +28,9 @@
 
   &__column {
     flex: 0 1 50%;
+    @media (max-width: $md3+px) {
+      flex: 0 1 auto;
+    }  
 
     &--logo {
       flex: 0 0 190px;
@@ -39,15 +42,18 @@
       }
 
       @media (max-width: $md3+px) {
-        flex: 0 0 100px;
+        flex: 1 0 100px;
       }
     }
   }
 
   &__menu {
+    display: inline-block;
   }
 
   &__logo {
+    position: relative;
+    z-index: 5;
     @media (max-width: $md3+px) {
       max-width: 100%;
     }
@@ -78,12 +84,26 @@
       top: 0;
       left: 0;
       overflow: auto;
-      background-color: #14c0d4;
-      padding: 70px 30px 0 30px;
+      background-color: #fff;
+      padding: 80px 10px 0 10px;
       z-index: 2;
-      display: none;
+      //display: none;
+      transform: translateX(-100%);
+      transition: all .3s ease 0s;
+      &::before {
+        //Накрывющая плашка меню
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 70px;
+        top: 0;
+        left: 0;
+        background-color: #009BB1;
+      }
       &._active {
-        display: block;
+        //display: block;
+        transform: translateY(0);
+
       }
     }
   }
@@ -93,6 +113,9 @@
     grid-template-columns: 110px 130px 180px;
     @media (max-width: $md1+px) {
       grid-template-columns: 90px 110px 160px;
+    }
+    @media (max-width: $md2+px) {
+      display: block;
     }
 
     li {
@@ -116,6 +139,9 @@
     @media (max-width: $md1+px) {
       padding: 0 10px;
     }
+    @media (max-width: $md2+px) {
+      color: #000;
+    }  
 
     span {
       position: relative;
@@ -183,9 +209,14 @@
       }
     }
   }
+  @media (max-width: $md3+px) {
+    display: inline-block;
+  }
 }
 
 .contacts-header {
+  position: relative;
+  z-index: 5;
   display: flex;
   justify-content: center;
   @media (max-width: $md2+px) {
@@ -312,6 +343,10 @@
   display: flex;
   align-items: center;
 
+  @media (max-width: 640px) {
+    display: block;
+  }
+
   li {
     &:not(:last-child) {
       margin: 0 54px 0 0;
@@ -319,6 +354,9 @@
         margin: 0 30 / $maxWidthContainer * 100vw 0 0;
       }
     }
+    @media (max-width: $md3+px) {
+      margin: 0 0 15px 0;
+    }  
   }
 
   &__item {
@@ -331,6 +369,9 @@
       background: none;
       padding: 0 0 0 0px;
     }
+    @media (max-width: $md3+px) {
+      margin: 0 0 10px 0;
+    }  
 
     &:hover {
       color: #1ab9ce;
@@ -380,6 +421,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 640px) {
+    justify-content: flex-start;
+  }
 
   &__column {
     &:not(:last-child) {
