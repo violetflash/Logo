@@ -36,11 +36,6 @@
       flex: 0 0 190px;
       text-align: center;
 
-      @media (min-width: $md3+px) {
-        align-self: flex-start;
-        padding-top: 25px;
-      }
-
       @media (max-width: $md3+px) {
         flex: 1 0 100px;
       }
@@ -81,31 +76,40 @@
       position: fixed;
       height: 100%;
       width: 100%;
-      top: 0;
+      top: 90px;
       left: 0;
-      overflow: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
       background-color: #fff;
-      padding: 80px 10px 0 10px;
+      padding: 20px 10px 100px 10px;
       z-index: 2;
-      //display: none;
+      display: none;
       transform: translateX(-100%);
       transition: all .3s ease 0s;
-      &::before {
-        //Накрывющая плашка меню
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 70px;
-        top: 0;
-        left: 0;
-        background-color: #009BB1;
+      @media (max-width: $md3+px) {
+        top: 70px;
       }
-      &._active {
-        //display: block;
-        transform: translateY(0);
 
+      //&::before {
+      //  //Накрывющая плашка меню
+      //  position: absolute;
+      //  content: '';
+      //  width: 100%;
+      //  height: 92px;
+      //  top: 0;
+      //  left: 0;
+      //  z-index: 3;
+      //  background-color: #009BB1;
+      //  @media (max-width: $md3+px) {
+      //    height: 70px;
+      //  }
+      //}
+      &._active {
+        display: block;
+        transform: translateY(0);
       }
     }
+
   }
 
   &__list {
@@ -120,6 +124,9 @@
 
     li {
       margin-bottom: 2px;
+      @media (max-width: 640px) {
+        margin: 0;
+      }  
     }
   }
 
@@ -141,7 +148,13 @@
     }
     @media (max-width: $md2+px) {
       color: #000;
-    }  
+    }
+    @media (max-width: 640px) {
+      display: inline-block;
+      padding: 10px 22px;
+      width: 100%;
+      text-align: left;
+    }
 
     span {
       position: relative;
@@ -153,6 +166,9 @@
         height: 1px;
         background-color: rgba(#fff, 0.6);
         bottom: -1px;
+        @media (max-width: $md2+px) {
+          background-color: rgba(#000, 0.6);
+        }
       }
     }
 
@@ -221,7 +237,12 @@
   justify-content: center;
   @media (max-width: $md2+px) {
     flex-direction: column;
-  }  
+  }
+  @media (max-width: 640px) {
+    width: 100px;
+    justify-content: space-around;
+    flex-direction: row;
+  }
 
   &__item {
     color: #fff;
@@ -233,9 +254,8 @@
     @media (max-width: $md2+px) {
       text-align: center;
     }
-    @media (max-width: $md3+px) {
+    @media (max-width: 640px) {
       padding: 0;
-      text-align: right;
     }
 
     &--icon {
@@ -250,6 +270,14 @@
         position: relative;
         @media (max-width: $md3+px) {
           padding: 0;
+        }
+        @media (max-width: 640px) {
+          font-size: 0;
+          background: url('../images/icons/header/phone.png') 0 0 no-repeat;
+          width: 19px;
+          height: 25px;
+          display: inline-block;
+          transform: scale(1.2);
         }
 
         &::before {
@@ -312,6 +340,9 @@
       padding: 0;
       font-size: 14px;
     }
+    @media (max-width: 640px) {
+      display: none;
+    }
   }
 }
 
@@ -344,7 +375,8 @@
   align-items: center;
 
   @media (max-width: 640px) {
-    display: block;
+    justify-content: space-around;
+    margin: 10px 0 20px 0;
   }
 
   li {
@@ -354,9 +386,13 @@
         margin: 0 30 / $maxWidthContainer * 100vw 0 0;
       }
     }
-    @media (max-width: $md3+px) {
-      margin: 0 0 15px 0;
-    }  
+    
+    @media (max-width: 640px) {
+      &:last-child {
+        display: none;
+      }
+    }
+
   }
 
   &__item {
@@ -367,10 +403,13 @@
     transition: all .3s ease 0s;
     @media (max-width: $md2+px) {
       background: none;
-      padding: 0 0 0 0px;
+      padding: 0;
     }
-    @media (max-width: $md3+px) {
-      margin: 0 0 10px 0;
+    @media (max-width: 640px) {
+      padding: 5px 20px;
+      background-color: #009BB1;
+      border-radius: 20px;
+      color: #fff;
     }  
 
     &:hover {
@@ -490,7 +529,7 @@
         }
 
         span {
-          right: 40px;
+          right: 38px;
           top: -10px;
           z-index: 1;
         }
@@ -500,6 +539,9 @@
           background: url('../images/icons/header/cart-hover.png') center center no-repeat;
         }
       }
+    }
+    @media (max-width: 640px) {
+      padding: 5px 0 0 0;
     }
 
     &::before {
@@ -528,6 +570,9 @@
         z-index: 1;
         background: url('../images/icons/header/cart-hover.png') center center no-repeat;
       }
+      @media (max-width: 640px) {
+        background: url('../images/icons/header/cart-default.png') center center no-repeat;
+      }
     }
 
     span {
@@ -546,9 +591,12 @@
       transition: all .3s ease 0s;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 0.5px 0 rgba(255, 255, 255, 1);
       @media (max-width: 1200px) {
-        right: -1px;
+        right: -3px;
         top: -10px;
         z-index: 1;
+      }
+      @media (max-width: 640px) {
+        top: -5px  ;
       }
     }
   }
