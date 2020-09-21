@@ -30,6 +30,8 @@ html {
 
 body {
   color: #000;
+  background-color: #e1ad01;
+  // background-color: #272822;
   font-size: 14px;
   height: 100%;
 
@@ -466,6 +468,9 @@ body {
     span {
       border-bottom: 1px dashed;
       margin: 0 12px 0 30px;
+      &:last-child {
+        display: none;
+      }
     }
 
     background-color: #f3f3f3;
@@ -498,6 +503,14 @@ body {
 
       &::after {
         transform: rotate(180deg);
+      }
+    }
+
+    &._selections {
+      span {
+        &:last-child {
+          display: inline-block;
+        }
       }
     }
 
