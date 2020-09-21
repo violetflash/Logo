@@ -25,11 +25,13 @@ $md4: 479.98;
 //@import "null";
 html {
   overflow-y: scroll;
+  height: 100%;
 }
 
 body {
   color: #000;
   font-size: 14px;
+  height: 100%;
 
   &.lock {
     overflow: hidden;
@@ -74,7 +76,7 @@ body {
 //</ОСНОВНАЯ СЕТКА>=============================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ >=======================================================================
-//@import "forms";
+@import "forms";
 @import "ui";
 // @import "normalize";
 @import "null";
@@ -86,14 +88,14 @@ body {
 //@import "pagging";
 // @import "popup";
 @import "header";
-//@import "footer";
+@import "footer";
 //@import "home";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ >=============================================================================
 
 .page {
   padding: 183px 0 50px 0;
-  flex: 1 1 auto;
-  overflow: hidden;
+  flex: 1 0 auto;
+  // overflow: hidden;
 
   &__container {
     display: flex;
@@ -109,48 +111,14 @@ body {
   &__content {
     flex: 1 1 auto;
     padding: 0 0 0 30px;
+    // height: 100%;
   }
 
   &__search {
   }
 }
 
-.search {
-  // .search__select
-  &__select {
-  }
-  // .search__title
-  &__title {
-  }
-  // .search__categories
-  &__categories {
-  }
-  // .search__input
-  &__input {
-  }
-  // .search__btn
-  &__btn {
-  }
-}
-.categories-search {
-  // .categories-search__column
-  &__column {
-  }
-  // .categories-search__list
-  &__list {
-  }
-  // .categories-search__link
-  &__link {
-  }
-}
-.btn {
-}
-
-
-
-.container {
-}
-
+//===============================================================================
 .catalog-menu {
   background-image: url("../images/bg_menu.jpg");
   background-position: 0 0;
@@ -196,7 +164,6 @@ body {
 
   &__body {
     display: none;
-
   }
 
   &__list {
@@ -277,7 +244,6 @@ body {
 }
 
 .submenu {
-
   &__item {
     border: 2px solid #098494;
     border-left: none;
@@ -325,6 +291,8 @@ body {
     padding: 11px 0 0 3px;
   }
 }
+
+//===============================================================================
 
 .product {
   padding: 38px 11px 15px 23px;
@@ -472,4 +440,130 @@ body {
       padding: 0 0 0 6px;
     }
   }
+}
+
+//===============================================================================
+
+.search {
+  display: flex;
+  height: 39px;
+  position: relative;
+
+  // .search__select
+  &__select {
+  }
+  // .search__title
+  &__title {
+    height: 100%;
+    padding: 15px 35px 12px 44px;
+    background-color: #f3f3f3;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    span {
+      color: #666;
+      font-size: 14px;
+      font-weight: 300;
+      border-bottom: 1px dashed;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &::before {
+      width: 17px;
+      height: 17px;
+      background-image: url("../images/icons/magnifier-page-search.png");
+      left: 14px;
+      top: 12px;
+    }
+    &::after {
+      width: 10px;
+      height: 10px;
+      background-image: url("../images/icons/arrow-page-search.png");
+      right: 13px;
+      top: 17px;
+    }
+  }
+  // .search__categories
+  &__categories {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+  }
+  // .search__input
+  &__input {
+    flex: 1 1 auto;
+    input {
+      height: 100%;
+      width: 100%;
+      border-top: 2px solid #f2f2f2;
+      border-bottom: 2px solid #f2f2f2;
+      background-color: #ffffff;
+    }
+  }
+  // .search__btn
+  &__btn {
+  }
+}
+.categories-search {
+  display: flex;
+  height: auto;
+  border-right: 1px solid #f3f3f3;
+  border-left: 1px solid #f3f3f3;
+  background-color: #ffffff;
+  border-bottom: 4px solid #f68038;
+
+  // .categories-search__column
+  &__column {
+    flex: 0 1 33.333%;
+    padding: 27px 0 37px;
+    border-right: 1px solid #ddd;
+    &:last-child {
+      border-right: none;
+    }
+  }
+  // .categories-search__list
+  &__list {
+  }
+
+  &__checkbox {
+    
+  }
+
+  &__checkbox-input {
+
+  }
+
+
+  // .categories-search__checkbox-text
+  &__checkbox-text {
+    color: #999999;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 36px;
+    letter-spacing: 0.3px;
+    padding: 6px 10px 6px 40px;
+    transition: all 0.3s ease 0s;
+    @media (min-width: $md2+px) {
+      &:hover {
+        color: #f68038;
+        background-color: #f3f3f3;
+      }
+    }
+
+    &::before {
+      // border-radius: 50%;
+      
+    }
+  }
+}
+
+.btn {
 }
