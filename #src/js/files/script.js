@@ -36,9 +36,9 @@ for (let index = 0; index < menuParents.length; index++) {
 }
 
 //SEARCH section
-let searchSelect = document.querySelector('.search__title');
+let searchSelectTitle = document.querySelector('.search__title');
 let searchSelectBox = document.querySelector('.categories-search');
-searchSelect.addEventListener("click", function(e) {
-    searchSelect.classList.toggle('_active');  
+searchSelectTitle.addEventListener("click", function(e) {
+  searchSelectTitle.classList.toggle('_active');
     _slideToggle(searchSelectBox);
 });
