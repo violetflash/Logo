@@ -534,13 +534,18 @@ body {
   }
 
   &__checkbox {
-    
   }
 
   &__checkbox-input {
-
+    &:checked + .checkbox__text::before {
+      background-image: none;
+      background-color: #f68038;
+      
+    }
+    &:checked + .checkbox__text {
+      color: #f68038;
+    }
   }
-
 
   // .categories-search__checkbox-text
   &__checkbox-text {
@@ -548,6 +553,7 @@ body {
     font-size: 12px;
     font-weight: 300;
     line-height: 36px;
+    width: 100%;
     letter-spacing: 0.3px;
     padding: 6px 10px 6px 40px;
     transition: all 0.3s ease 0s;
@@ -559,8 +565,12 @@ body {
     }
 
     &::before {
-      // border-radius: 50%;
-      
+      flex: 0 0 6px;
+      width: 6px;
+      height: 6px;
+      border: none;
+      border-radius: 50%;
+      background-color: transparent;
     }
   }
 }
