@@ -11,7 +11,6 @@
   }
   @media (max-width: $md3+px) {
     background: #fff url("../images/bg_header.jpg") 0 -20px no-repeat;
-
   }
 
   &__top {
@@ -61,7 +60,11 @@
 
   &__img {
     @media (max-width: $md3+px) {
-      transform: scale(.7);
+      transform: scale(0.7);
+    }
+
+    @media (min-width: $md3+px){
+      margin-top: 26px;
     }
   }
 
@@ -74,9 +77,9 @@
 
 .menu {
   &__icon {
-		@media (max-width: $md2+px) {
-			display: block;
-		}
+    @media (max-width: $md2+px) {
+      display: block;
+    }
   }
 
   &__body {
@@ -93,7 +96,7 @@
       z-index: 2;
       display: none;
       transform: translateX(-100%);
-      transition: all .3s ease 0s;
+      transition: all 0.3s ease 0s;
       @media (max-width: $md3+px) {
         top: 70px;
       }
@@ -117,7 +120,6 @@
         transform: translateY(0);
       }
     }
-
   }
 
   &__list {
@@ -139,6 +141,7 @@
         margin: 0;
         max-width: 100%;
       }
+
       &:last-child {
         max-width: 175px;
         @media (max-width: 640px) {
@@ -165,11 +168,11 @@
       color: #000;
     }
     @media (max-width: 640px) {
-
       font-size: 20px;
       width: 100%;
-      //text-align: left;
+      display: block;
       padding: 15px;
+      text-align: center;
     }
     @media (min-width: $md2+px) {
       &:hover {
@@ -206,6 +209,7 @@
   height: 20px;
   cursor: pointer;
   z-index: 5;
+
   span {
     transition: all 0.3s ease 0s;
     top: calc(50% - 1.5px);
@@ -224,6 +228,7 @@
       bottom: 0;
     }
   }
+
   &._active {
     span {
       transform: scale(0);
@@ -284,7 +289,7 @@
         }
         @media (max-width: 640px) {
           font-size: 0;
-          background: url('../images/icons/header/phone.png') 0 0 no-repeat;
+          background: url("../images/icons/header/phone.png") 0 0 no-repeat;
           width: 19px;
           height: 25px;
           display: inline-block;
@@ -299,9 +304,9 @@
           background: url("../images/icons/header/phone.png") left no-repeat;
           left: 0;
           bottom: 5px;
-          transition: all .3s ease 0s;
+          transition: all 0.3s ease 0s;
           @media (max-width: $md1+px) {
-            transform: scale(.8);
+            transform: scale(0.8);
           }
           @media (max-width: $md2+px) {
             bottom: -17px;
@@ -364,7 +369,7 @@
     display: flex;
     align-items: center;
     height: 63px;
-		justify-content: space-between;
+    justify-content: space-between;
   }
 
   &__column {
@@ -383,7 +388,7 @@
 
 .actions-header {
   display: flex;
-	align-items: center;
+  align-items: center;
   @media (max-width: 640px) {
     justify-content: space-around;
     margin: 10px 0 20px 0;
@@ -396,7 +401,8 @@
   li {
     &:not(:last-child) {
       margin: 0 54px 0 0;
-      @media (max-width: $maxWidthContainer+px) { //FIXME: responsive margin (is it useful?)
+      @media (max-width: $maxWidthContainer+px) {
+        //FIXME: responsive margin (is it useful?)
         margin: 0 30 / $maxWidthContainer * 100vw 0 0;
       }
     }
@@ -406,7 +412,6 @@
         display: none;
       }
     }
-
   }
 
   &__item {
@@ -414,13 +419,12 @@
     line-height: 24px;
     padding: 0 0 0 36px;
     color: #999999;
-    transition: all .3s ease 0s;
+    transition: all 0.3s ease 0s;
     @media (max-width: $md2+px) {
       background: none;
       padding: 0;
     }
     @media (max-width: 640px) {
-
     }
 
     &:hover {
@@ -436,38 +440,36 @@
     }
 
     &--login {
-      background: url('../images/icons/header/login-default.png') left no-repeat;
+      background: url("../images/icons/header/login-default.png") left no-repeat;
 
       &:hover {
-        background: url('../images/icons/header/login-hover.png') left no-repeat;
+        background: url("../images/icons/header/login-hover.png") left no-repeat;
         @media (max-width: $md2+px) {
           background: none;
         }
       }
     }
-
 
     &--register {
-      background: url('../images/icons/header/user-default.png') left no-repeat;
+      background: url("../images/icons/header/user-default.png") left no-repeat;
 
       &:hover {
-        background: url('../images/icons/header/user-hover.png') left no-repeat;
+        background: url("../images/icons/header/user-hover.png") left no-repeat;
         @media (max-width: $md2+px) {
           background: none;
         }
       }
     }
 
-
     &--email {
-      background: url('../images/icons/header/mail-default.png') left no-repeat;
+      background: url("../images/icons/header/mail-default.png") left no-repeat;
 
       span {
         border-bottom: 1px solid;
       }
 
       &:hover {
-        background: url('../images/icons/header/mail-hover.png') left no-repeat;
+        background: url("../images/icons/header/mail-hover.png") left no-repeat;
         @media (max-width: $md2+px) {
           background: none;
         }
@@ -487,12 +489,12 @@
   &__column {
     &:not(:last-child) {
       padding: 0 35px 0 0;
-      @media (max-width: $maxWidthContainer+px) { //FIXME: responsive padding (is it useful?)
+      @media (max-width: $maxWidthContainer+px) {
+        //FIXME: responsive padding (is it useful?)
         padding: 0 30 / $maxWidthContainer * 100vw 0 0;
       }
     }
   }
-
 
   &__callback {
     padding-left: 32px;
@@ -502,17 +504,16 @@
     font-size: 14px;
     font-weight: 300;
     line-height: 20px;
-    background: url('../images/icons/header/callback.png') left no-repeat;
+    background: url("../images/icons/header/callback.png") left no-repeat;
 
     span {
       border-bottom: 1px dotted #1ab9ce;
     }
   }
 
-
   &__schedule {
     padding: 0 0 0 36px;
-    background: url('../images/icons/header/schedule.png') left no-repeat;
+    background: url("../images/icons/header/schedule.png") left no-repeat;
     line-height: 22px;
     color: #999999;
     font-size: 12px;
@@ -557,7 +558,7 @@
 
         &::after {
           z-index: 1;
-          background: url('../images/icons/header/cart-hover.png') center center no-repeat;
+          background: url("../images/icons/header/cart-hover.png") center center no-repeat;
         }
       }
     }
@@ -566,7 +567,7 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       background-color: #4da0b9;
       left: 0;
@@ -574,7 +575,7 @@
       width: 39px;
       height: 39px;
       border-radius: 50%;
-      transition: all .3s ease 0s;
+      transition: all 0.3s ease 0s;
       @media (max-width: 1200px) {
         background-color: transparent;
       }
@@ -582,17 +583,17 @@
 
     &::after {
       position: absolute;
-      content: '';
-      background: url('../images/icons/header/cart-default.png') center center no-repeat;
+      content: "";
+      background: url("../images/icons/header/cart-default.png") center center no-repeat;
       width: 39px;
       height: 39px;
-      transition: all .3s ease 0s;
+      transition: all 0.3s ease 0s;
       @media (max-width: 1200px) {
         z-index: 1;
-        background: url('../images/icons/header/cart-hover.png') center center no-repeat;
+        background: url("../images/icons/header/cart-hover.png") center center no-repeat;
       }
       @media (max-width: 640px) {
-        background: url('../images/icons/header/cart-default.png') center center no-repeat;
+        background: url("../images/icons/header/cart-default.png") center center no-repeat;
       }
     }
 
@@ -609,7 +610,7 @@
       right: -15px;
       top: 0;
       z-index: 2;
-      transition: all .3s ease 0s;
+      transition: all 0.3s ease 0s;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 0.5px 0 rgba(255, 255, 255, 1);
       @media (max-width: 1200px) {
         right: -3px;
@@ -617,12 +618,8 @@
         z-index: 1;
       }
       @media (max-width: 640px) {
-        top: -5px  ;
+        top: -5px;
       }
     }
   }
 }
-
-
-
-
