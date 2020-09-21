@@ -34,3 +34,11 @@ for (let index = 0; index < menuParents.length; index++) {
         menuParent.classList.remove('active')
     });
 }
+
+//SEARCH section
+let searchSelect = document.querySelector('.search__title');
+let searchSelectBox = document.querySelector('.categories-search');
+searchSelect.addEventListener("click", function(e) {
+    searchSelect.classList.toggle('_active');  
+    _slideToggle(searchSelectBox);
+});
