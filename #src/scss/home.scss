@@ -1,0 +1,127 @@
+.mainslider {
+  // .mainslider__body
+  &__body {
+  }
+
+  // .mainslider__slide
+  &__slide {
+    position: relative;
+  }
+
+  // .mainslider__content
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  // .mainslider__image
+  &__image {
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  // .mainslider__img
+  &__img {
+  }
+
+  // .mainslider__dots
+  &__dots {
+  }
+}
+
+.content-mainslider {
+  padding: 20px 35px;
+
+  // .content-mainslider__title
+  &__title {
+    color: #333333;
+    font-size: 48px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 43px;
+    margin: 0 0 50px 0;
+    span {
+      display: block;
+      color: #f68038;
+    }
+  }
+
+  // .content-mainslider__text
+  &__text {
+  }
+
+  // .content-mainslider__footer
+  &__footer {
+    text-align: center;
+  }
+
+  // .content-mainslider__price
+  &__price {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin: 0 0 24px 0;
+  }
+
+  // .content-mainslider__btn
+  &__btn {
+    padding: 5px 15px 5px 22px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 24px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: 3px solid #ffffff;
+    margin: 0 0 27px 0;
+
+    span {
+      padding: 0 27px 0 0;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: '';
+        width: 14px;
+        height: 14px;
+        background-image: url('../images/icons/arrow-mainslider.png');
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        right: 0;
+        top: 1px;
+      }
+    }
+  }
+}
+
+.text-mainslider {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #333333;
+  margin: 0 0 16px 0; 
+  // .text-mainslider__text1
+    &__text1 {
+    color: #f68038;
+    font-size: 18px;
+  }
+
+  // .text-mainslider__text2
+  &__text2 {
+    display: inline-block;
+    color: #fff;
+    padding: 0 10px;
+    background-color: #989292;
+  }
+
+  &__text3 {
+    color: #979797;
+  }
+}

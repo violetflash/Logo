@@ -91,7 +91,7 @@ body {
 // @import "popup";
 @import "header";
 @import "footer";
-//@import "home";
+@import "home";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ >=============================================================================
 
 .page {
@@ -118,6 +118,10 @@ body {
 
   &__search {
     margin: 0 0 22px 0
+  }
+
+  &__slider {
+    margin: 0 0 66px 0
   }
 }
 
@@ -628,66 +632,3 @@ body {
 }
 
 //===============================================================================
-
-.mainslider {
-
-  // .mainslider__body
-  &__body {
-  }
-
-  // .mainslider__slide
-  &__slide {
-  }
-
-  // .mainslider__content
-  &__content {
-  }
-
-  // .mainslider__image
-  &__image {
-  }
-
-  // .mainslider__img
-  &__img {
-  }
-
-  // .mainslider__dots
-  &__dots {
-  }
-}  
-
-.content-mainslider {
-
-  // .content-mainslider__title
-  &__title {
-  }
-
-  // .content-mainslider__text
-  &__text {
-  }
-
-  // .content-mainslider__footer
-  &__footer {
-  }
-
-  // .content-mainslider__price
-  &__price {
-  }
-
-  // .content-mainslider__btn
-  &__btn {
-  }
-
-}
-
-.text-mainslider {
-
-  // .text-mainslider__text1
-  &__text1 {
-  }
-
-  // .text-mainslider__text2
-  &__text2 {
-  }
-
-}

@@ -48,8 +48,8 @@ searchSelectTitle.addEventListener("click", function (e) {
   _slideToggle(searchSelectBox);
 });
 
-//Calculating choices (checked checkboxes)
 
+//Calculating choices (checked checkboxes)
 let checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
 
 for (let index = 0; index < checkboxCategories.length; index++) {
@@ -81,7 +81,6 @@ let searchUncheckAll = document.querySelector('.categories-search__uncheck-all')
 
 //check all button
 searchCheckAll.addEventListener("click", function (e) {
-  // searchSelectTitle.classList.add('_selections') 
 
   for (let index = 0; index < checkboxCategoryReal.length; index++) {
       checkboxCategoryReal[index].checked = true;
