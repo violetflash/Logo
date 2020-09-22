@@ -209,8 +209,8 @@ function images() {
         //сборка файлов через fileinclude
         //pipe - функция, внутри которой мы пишем команды для gulp
         .pipe(dest(path.build.img))
-        .pipe(browsersync.stream())
-        .pipe(size());
+        .pipe(size())
+        .pipe(browsersync.stream());
 }
 
 function fonts(params) {
