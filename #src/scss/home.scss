@@ -36,6 +36,11 @@
 .content-mainslider {
   padding: 20px 35px;
 
+  .swiper-container {
+    width: 600px;
+    height: 300px;
+}
+
   // .content-mainslider__title
   &__title {
     color: #333333;

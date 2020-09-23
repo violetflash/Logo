@@ -1,10 +1,10 @@
-//BuildSlider
-/*
+//BuildSlider - строит HTML конструкцию для свайпера
+
 let sliders = document.querySelectorAll('.swiper');
 if (sliders) {
   for (let index = 0; index < sliders.length; index++) {
     let slider = sliders[index];
-    if (!slider.classList.contains('swiper-bild')) {
+    if (!slider.classList.contains('swiper-container')) {
       let slider_items = slider.children;
       if (slider_items) {
         for (let index = 0; index < slider_items.length; index++) {
@@ -18,7 +18,7 @@ if (sliders) {
       slider_wrapper.innerHTML = slider_content;
       slider.innerHTML = '';
       slider.appendChild(slider_wrapper);
-      slider.classList.add('swiper-bild');
+      slider.classList.add('swiper-container');
     }
     if (slider.classList.contains('_gallery')) {
       //slider.data('lightGallery').destroy(true);
@@ -28,21 +28,21 @@ if (sliders) {
 }
 
 function sliders_bild_callback(params) { }
-*/
 
-let mainslider = new Swiper('.swiper-container', {
+
+let mainslider = new Swiper('.mainslider__body', {
   
-  effect: 'fade',
+  // effect: 'fade',
   autoplay: {
     delay: 3000,
     disableOnInteraction: false,
   },
   
-  observer: true,
-  observeParents: true,
+  // observer: true,
+  // observeParents: true,
   slidesPerView: 1,
-  spaceBetween: 0,
-  autoHeight: true,
+  // spaceBetween: 0,
+  // autoHeight: true,
   speed: 800,
   /*
   touchRatio: 0,
@@ -51,19 +51,20 @@ let mainslider = new Swiper('.swiper-container', {
   preLoadImages: false,
   lazy: true,
   //Dots
+  */
   pagination: {
-    el: '.slider-quality__pagging',
+    el: '.mainslider__dots',
     clickable: true,
   },
-  Arrows
-  */
-  navigation: {
-    nextEl: '.about__more .about__more--next',
-    prevEl: '.about__more .about__more--prev',
-  },
-  on: {
-    lazyImageReady: function () {
-      ibg();
-    }, 
-  }
+  // Arrows
+  
+  // navigation: {
+  //   nextEl: '.about__more .about__more--next',
+  //   prevEl: '.about__more .about__more--prev',
+  // },
+  // on: {
+  //   lazyImageReady: function () {
+  //     ibg();
+  //   }, 
+  // }
 });
