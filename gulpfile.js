@@ -65,6 +65,7 @@ let {src, dest} = require('gulp'),
     clean_css = require("gulp-clean-css"),
     rename = require("gulp-rename"),
     uglify = require("gulp-uglify-es").default,
+    concat = require("gulp-concat"),
     imagemin = require("gulp-imagemin"),
     recompress = require("imagemin-jpeg-recompress"), //тоже пережимает, но лучше. Плагин для плагина
     pngquant = require("imagemin-pngquant"),
@@ -107,16 +108,62 @@ function html() {
         .pipe(browsersync.stream())
 }
 
+gulp.task("script", function () {
+    //аналогично поступаем с js-файлами
+    return gulp
+        .src([
+            //тут подключаем разные js в общую библиотеку. Отключите то, что вам не нужно.
+            // "node_modules/jquery/dist/jquery.js"
+        ])
+        //pipe - функция, внутри которой мы пишем команды для gulp
+        .pipe(babel())
+        .pipe(concat("libs.min.js"))
+        .pipe(dest(path.build.js)) //выгрузка
+        .pipe(
+            uglify()
+        )
+        .pipe(
+            rename({
+                extname: ".min.js"
+            })
+        )
+        .pipe(dest(path.build.js))
+        .pipe(size())
+        .pipe(browsersync.stream())
+});
+
 gulp.task("style", function () {
     //создаём единую библиотеку из css-стилей всех плагинов
     return gulp
         .src([
             //указываем, где брать исходники
-            "node_modules/normalize.css/normalize.css",
+            // "node_modules/normalize.css/normalize.css",
         ])
         .pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
-        .pipe(cssmin()) //минифицируем полученный файл
-        .pipe(gulp.dest("build/css")) //кидаем готовый файл в директорию
+        .pipe(clean_css({
+            compatibility: "ie8",
+            level: {
+                1: {
+                    specialComments: 0,
+                    removeEmpty: true,
+                    removeWhitespace: true,
+                },
+                2: {
+                    mergeMedia: true,
+                    removeEmpty: true,
+                    removeDuplicateFontRules: true,
+                    removeDuplicateMediaBlocks: true,
+                    removeDuplicateRules: true,
+                    removeUnusedAtRules: true,
+                },
+            },
+        }))
+        .pipe(
+            rename({
+                extname: ".min.css"
+            })
+        )
+        .pipe(dest(path.build.css)) //кидаем готовый файл в директорию
         .pipe(size());
 });
 
@@ -304,6 +351,8 @@ function clean(params) {
 let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle);
 //сценарий выполнения watch
 let watch = gulp.parallel(build, watchFiles, browserSync);
+
+gulp.task("default", gulp.parallel("style", "script"));
 
 //подружим gulp с новыми переменными, чтобы он их понимал и работал с ними
 

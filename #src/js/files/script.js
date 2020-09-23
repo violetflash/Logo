@@ -129,4 +129,3 @@ searchUncheckAll.addEventListener("click", function (e) {
   }
 
 });
-

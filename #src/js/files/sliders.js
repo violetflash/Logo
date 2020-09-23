@@ -1,4 +1,5 @@
 //BuildSlider
+/*
 let sliders = document.querySelectorAll('.swiper');
 if (sliders) {
   for (let index = 0; index < sliders.length; index++) {
@@ -27,8 +28,9 @@ if (sliders) {
 }
 
 function sliders_bild_callback(params) { }
+*/
 
-let mainslider = new Swiper('.mainslider__body', {
+let mainslider = new Swiper('.swiper-container', {
   
   effect: 'fade',
   autoplay: {
@@ -53,7 +55,7 @@ let mainslider = new Swiper('.mainslider__body', {
     el: '.slider-quality__pagging',
     clickable: true,
   },
-  //Arrows
+  Arrows
   */
   navigation: {
     nextEl: '.about__more .about__more--next',
