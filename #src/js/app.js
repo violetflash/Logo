@@ -4,4 +4,6 @@
 @@include('files/forms.js', {})
 @@include('files/scroll.js', {})
 @@include('files/dynamic-adapt.js', {})
+@@include('files/sliders.js', {})
+@@include('vendors.js', {})
 

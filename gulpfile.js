@@ -1,5 +1,7 @@
 //флаг --save-dev нужен для того, чтобы сохранялись версии устанавливаемых пакетов
 
+
+
 //итоговый каталог для заказчика
 // динамическое имя с именем общего каталога (выяснить как внести его в гит игнор)
 // let project_folder = require("path").basename(__dirname);
@@ -104,6 +106,19 @@ function html() {
         .pipe(size())
         .pipe(browsersync.stream())
 }
+
+gulp.task("style", function () {
+    //создаём единую библиотеку из css-стилей всех плагинов
+    return gulp
+        .src([
+            //указываем, где брать исходники
+            "node_modules/normalize.css/normalize.css",
+        ])
+        .pipe(concat("libs.min.css")) //склеиваем их в один файл с указанным именем
+        .pipe(cssmin()) //минифицируем полученный файл
+        .pipe(gulp.dest("build/css")) //кидаем готовый файл в директорию
+        .pipe(size());
+});
 
 //Функция обработки стилей
 function css() {

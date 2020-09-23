@@ -81,6 +81,7 @@ body {
 @import "forms";
 @import "ui";
 // @import "normalize";
+@import "libs/swiper";
 @import "null";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ >======================================================================
 
@@ -456,6 +457,7 @@ body {
   display: flex;
   height: 39px;
   position: relative;
+  z-index: 3;
 
   // .search__select
   &__select {
@@ -632,3 +634,4 @@ body {
 }
 
 //===============================================================================
+//
