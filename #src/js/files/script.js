@@ -2,12 +2,12 @@ let burgerHeader = document.querySelector('.menu__icon');
 
 let burgerHeaderMenu = document.querySelector('.menu__body');
 
-let body = document.querySelector('body');
+// let body = document.querySelector('body');
 
 burgerHeader.addEventListener("click", function (e) {
   burgerHeader.classList.toggle('_active');
   burgerHeaderMenu.classList.toggle('_active');
-  body.classList.toggle('lock');
+  // body.classList.toggle('lock');
 });
 
 
@@ -22,21 +22,65 @@ burgerCatalogBlock.addEventListener("click", function (e) {
 });
 
 
-//Выезд меню по наведнию
+//Выезд меню по наведнию + мобилка
+
+if (isMobile.any()) {
+  let menuParents = document.querySelectorAll('.catalog-menu__parent .catalog-menu__link');
+  for (let index = 0; index < menuParents.length; index++) {
+    const menuParent = menuParents[index];
+    menuParent.addEventListener("click", function (e) {
+      e.preventDefault();
+      menuParent.classList.toggle('_active');
+
+      let menuItems = document.querySelectorAll('.submenu__item');
+      let menuItem = menuItems[index];
+
+      _slideToggle(menuItem);
+      
+
+    });
+
+  }
+
+} else {
+
+  let menuParents = document.querySelectorAll('.catalog-menu__parent');
+
+  let submenuItems = document.querySelectorAll('.submenu__item');
+
+  for (let index = 0; index < menuParents.length; index++) {
+    const menuParent = menuParents[index];
+    menuParent.addEventListener("mouseenter", function (e) {
+      menuParent.classList.add('_active')
+    });
+
+    menuParent.addEventListener("mouseleave", function (e) {
+      menuParent.classList.remove('_active')
+    });
+  }
+}
+
+
+
+
+/*
 let menuParents = document.querySelectorAll('.catalog-menu__parent');
 
 let submenuItems = document.querySelectorAll('.submenu__item');
 
 for (let index = 0; index < menuParents.length; index++) {
-  const menuParent = menuParents[index];
-  menuParent.addEventListener("mouseenter", function (e) {
-    menuParent.classList.add('_active')
-  });
+    const menuParent = menuParents[index];
+    menuParent.addEventListener("mouseenter", function (e) {
+        menuParent.classList.add('_active')
+    });
 
-  menuParent.addEventListener("mouseleave", function (e) {
-    menuParent.classList.remove('_active')
-  });
+    menuParent.addEventListener("mouseleave", function (e) {
+        menuParent.classList.remove('_active')
+    });
 }
+*/
+
+
 
 //SEARCH section
 
@@ -70,7 +114,6 @@ for (let index = 0; index < checkboxCategories.length; index++) {
 }
 
 
-
 //check/uncheck all checkboxes
 let checkboxCategoryReal = document.querySelectorAll('.categories-search__checkbox-input');
 
@@ -83,7 +126,7 @@ let searchUncheckAll = document.querySelector('.categories-search__uncheck-all')
 searchCheckAll.addEventListener("click", function (e) {
 
   for (let index = 0; index < checkboxCategoryReal.length; index++) {
-      checkboxCategoryReal[index].checked = true;
+    checkboxCategoryReal[index].checked = true;
   }
 
   //sync with choices counter
@@ -109,7 +152,7 @@ searchUncheckAll.addEventListener("click", function (e) {
   // searchSelectTitle.classList.add('_selections')
 
   for (let index = 0; index < checkboxCategoryReal.length; index++) {
-      checkboxCategoryReal[index].checked = false;
+    checkboxCategoryReal[index].checked = false;
   }
 
   //sync with choices counter

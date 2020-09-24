@@ -1,3 +1,24 @@
+//===============================
+//Webp check
+/*
+function testWebP(callback) {
+    var webP = new Image();
+    webP.onload = webP.onerror = function () {
+        callback(webP.height == 2);
+    };
+    webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+}
+
+testWebP(function (support) {
+    if (support == true) {
+        document.querySelector('body').classList.add('webp');
+    }else{
+        document.querySelector('body').classList.add('no-webp');
+    }
+});
+*/
+//=================================================================
+
 //=================================================================
 //IBG
 function ibg() {
@@ -34,7 +55,24 @@ var isMobile = {
   }
 };
 
+// let body = document.querySelector('body');
+// if (isMobile.any()) {
+//   body.classList.add('touch');
+//   let arrow = document.querySelectorAll('.arrow');
+//   for (let index = 0; index < arrow.length; index++) {
+//       let thisLink = arrow[index].previousElementSibling;
+//       let subMenu = arrow[index].nextElementSibling;
+//       let thisArrow = arrow[index];
 
+//       thisLink.classList.add('.parent');
+//     arrow[index].addEventListener('click', function() {
+//       subMenu.classList.toggle('open');
+//       thisArrow.classList.toggle('active');
+//     });  
+//   }
+// } else{
+//   body.classList.add('.mouse');
+// }
 
 //=================================================================
 //SlideToggle
@@ -105,3 +143,15 @@ let _slideToggle = (target, duration = 500) => {
   }
 }
 //=====================================================================
+
+//плавная прокрутка экрана до нужно елемента:
+/*
+(function () {
+  const slider = document.querySelector(".recommendation-slider");
+  const footer = document.querySelector(".header");
+  footer.onclick = function () {
+    slider.scrollIntoView({ behavior: "smooth" }); // Прокрутка до верхней границы
+  }
+
+}());
+*/
