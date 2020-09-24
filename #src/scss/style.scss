@@ -113,6 +113,7 @@ body {
 
   &__content {
     flex: 1 1 auto;
+    min-width: 0;
     padding: 0 0 0 30px;
     // height: 100%;
   }

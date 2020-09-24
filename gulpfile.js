@@ -107,14 +107,21 @@ function html() {
         .pipe(browsersync.stream())
 }
 
+
 function cssLibs() {
     //библиотека из css-стилей плагинов
-    return src(modules_folder + [
-        "/swiper/swiper-bundle.css",
-        "/normalize.css/normalize.css"
+    return src([
+        "node_modules/swiper/swiper-bundle.css",
+        "node_modules/normalize.css/normalize.css"
     ])
         .pipe(sourcemaps.init())
         .pipe(concat("libs.css")) //склеиваем их в один файл с указанным именем
+        .pipe(
+            autoprefixer({
+                overrideBrowserslist: ["last 5 versions"],
+                cascade: true
+            })
+        )
         .pipe(dest(path.build.css)) //кидаем несжатый файл в директорию результата
         .pipe(clean_css({
             compatibility: "ie8",
@@ -194,10 +201,10 @@ function css() {
 }
 
 function jsLibs() {
-    return src(modules_folder + [
+    return src([
         //подключаем разные js в общую библиотеку.
-        // "/jquery/dist/jquery.js"
-        "/swiper/swiper-bundle.js"
+        "node_modules/swiper/swiper-bundle.js",
+        "node_modules/jquery/dist/jquery.js"
 
     ])
         //pipe - функция, внутри которой мы пишем команды для gulp
