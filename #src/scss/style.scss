@@ -30,7 +30,7 @@ html {
 
 body {
   color: #000;
-  background-color: #e1ad01;
+  // background-color: #e1ad01;
   // background-color: #272822;
   font-size: 14px;
   height: 100%;
@@ -576,6 +576,8 @@ body {
     display: inline-block;
     cursor: pointer;
     background-color: rgba(#000, .3);
+    width: 45%;
+    text-align: center;
   }
 
   // .categories-search__column

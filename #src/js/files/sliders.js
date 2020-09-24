@@ -36,10 +36,10 @@ if (document.querySelector('.mainslider')) {
   let mainslider = new Swiper('.mainslider__body', {
 
     // effect: 'fade',
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     observer: true,
     observeParents: true,
     slidesPerView: 1,
@@ -76,7 +76,7 @@ if (document.querySelector('.mainslider')) {
   let mainsliderDots = document.querySelectorAll('.mainslider__dots .swiper-pagination-bullet');
 
   for (let index = 0; index < mainsliderImages.length; index++) {
-      const mainsliderImage = mainsliderImages[index].querySelector('img').getAttribute('src');
+      const mainsliderImage = mainsliderImages[index + 1].querySelector('img').getAttribute('src');
       mainsliderDots[index].style.backgroundImage =  "url('" + mainsliderImage + "')";    
   }
 
