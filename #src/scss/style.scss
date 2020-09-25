@@ -119,6 +119,10 @@ body {
     margin: 0 0 44px 0;
   }
 
+  &__content-side {
+
+  }
+
   // .page__news
   &__news {
     margin: 0 0 76px 0;
@@ -141,6 +145,9 @@ body {
 
   &__slider {
     margin: 0 0 66px 0;
+  }
+
+  &__products {
   }
 }
 
@@ -419,6 +426,9 @@ body {
   &__item {
     padding: 0 10px 0 0;
     margin: 0 0 47px 0;
+    @media (max-width: 640px) {
+      padding: 0;
+    }
     @media (min-width: $md2+px) {
       &:hover {
         .side-news__name {
@@ -490,6 +500,10 @@ body {
   &__content {
     padding: 15px 10px 20px 30px;
     transition: all 0.3s ease 0s;
+    @media (max-width: 640px) {
+    padding: 15px 0 20px 30px;
+      
+    }
   }
 
   // .side-feedback__head
@@ -534,6 +548,12 @@ body {
 }
 
 //===============================================================================
+.products {
+
+  // .items-products__column
+  &__column {
+  }
+}
 
 .product {
   padding: 38px 11px 15px 23px;

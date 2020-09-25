@@ -29,6 +29,49 @@ if (sliders) {
 
 function sliders_bild_callback(params) { }
 
+if (document.querySelector('.products-slider')) {
+
+
+  let productsSlider = new Swiper('.products-slider__item', {
+
+    // effect: 'fade',
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    // observer: true,
+    // observeParents: true,
+    // slidesPerView: 1,
+    // // spaceBetween: 0,
+    // autoHeight: true,
+    // speed: 800,
+    loop: true,
+
+    /*
+    touchRatio: 0,
+    simulateTouch: false,
+    preLoadImages: false,
+    lazy: true,
+    //Dots
+    */
+    // pagination: {
+    //   el: '.mainslider__dots',
+    //   clickable: true,
+    // },
+    // Arrows
+
+    navigation: {
+      nextEl: '.product-slider__arrow--next',
+      prevEl: '.product-slider__arrow',
+    },
+    // on: {
+    //   lazyImageReady: function () {
+    //     ibg();
+    //   },
+    // }
+  });
+
+}
 
 
 if (document.querySelector('.mainslider')) {
@@ -76,8 +119,13 @@ if (document.querySelector('.mainslider')) {
   let mainsliderDots = document.querySelectorAll('.mainslider__dots .swiper-pagination-bullet');
 
   for (let index = 0; index < mainsliderImages.length; index++) {
-      const mainsliderImage = mainsliderImages[index + 1].querySelector('img').getAttribute('src');
-      mainsliderDots[index].style.backgroundImage =  "url('" + mainsliderImage + "')";    
+    const mainsliderImage = mainsliderImages[index + 1].querySelector('img').getAttribute('src');
+    mainsliderDots[index].style.backgroundImage = "url('" + mainsliderImage + "')";
   }
 
 }
+
+
+
+
+
