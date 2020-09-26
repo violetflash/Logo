@@ -115,7 +115,7 @@ function cssLibs() {
         "node_modules/normalize.css/normalize.css"
     ])
         .pipe(sourcemaps.init())
-        .pipe(concat("libs.css")) //склеиваем их в один файл с указанным именем
+        .pipe(concat("pages.css")) //склеиваем их в один файл с указанным именем
         .pipe(
             autoprefixer({
                 overrideBrowserslist: ["last 5 versions"],
@@ -208,7 +208,7 @@ function jsLibs() {
 
     ])
         //pipe - функция, внутри которой мы пишем команды для gulp
-        .pipe(concat("libs.js"))
+        .pipe(concat("pages.js"))
         .pipe(dest(path.build.js)) //выгрузка несжатого
         .pipe(
             uglify() // сжимаем
