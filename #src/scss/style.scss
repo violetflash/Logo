@@ -582,6 +582,7 @@ body {
 
     .product {
       margin: 0 0 30px 0;
+
       &__title {
         margin: 0 0 16px 0;
       }
@@ -589,12 +590,24 @@ body {
       &__image {
         min-height: 205px;
       }
+
       @media (min-width: $md2+px) {
         &:hover {
           .hover {
             opacity: 1;
             visibility: visible;
+
+            &__cart {
+              &::before {
+                transform: translateY(0)
+              }
+
+              &::after {
+                transform: translate(-50%, -50%) scale(1.6);
+              }
+            }
           }
+
           .product__body,
           .product__footer {
             opacity: 0;
@@ -630,6 +643,7 @@ body {
     .outstock {
       display: inline-block;
     }
+
     .hover__label.in-stock {
       display: none;
     }
@@ -687,6 +701,7 @@ body {
     font-weight: 400;
     line-height: 22px;
     transition: all 0.3s ease 0s;
+
     span {
       display: block;
       font-weight: 900;
@@ -796,44 +811,55 @@ body {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  //width: 100%;
+  //height: 100%;
   left: 0;
+  bottom: 0;
+  right: 0;
   top: 0;
   border: 5px solid #f68038;
   background-color: rgba(0, 0, 0, 0.84);
   transition: all .3s ease 0s;
+  pointer-events: all;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    flex: 1 1 auto;
+    padding: 26px 26px 0 26px;
+  }
 
   &__title {
+    display: inline-block;
     font-size: 16px;
     line-height: 22px;
     font-weight: 300;
     color: #c2c2c2;
-    padding: 26px 26px 0 26px;
     margin: 0 0 25px 0;
+    transition: all .3s ease 0s;
+    @media (min-width: $md2+px) {
+      &:hover {
+        color: #f68038;
+        span {
+          color: #f68038;
+        }
+      }
+    }    
+
     span {
       display: block;
       font-weight: 900;
       color: #ffffff;
+      transition: all .3s ease 0s;
     }
   }
 
   &__info {
-    padding: 0 26px;
     margin: 0 0 15px 0;
   }
 
-  &__parameter {
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 24px;
-    span {
-      display: block;
-      color: #f68038;
-      font-weight: 900;
-      line-height: 18px;
-    }
-    margin: 0 0 5px 0;
+  &__parameters {
+
   }
 
   &__cart-wrapper {
@@ -846,22 +872,24 @@ body {
     width: 57px;
     height: 57px;
 
-
-
     &::before {
       background-color: #fd8424;
       width: 60px;
       height: 60px;
+      transform: translateY(100%);
+
     }
 
     &::after {
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) scale(1.6);
+      transition: all .3s ease 0s;
+      transform: translate(-50%, -50%) scale(1.6) translateY(100%);
     }
   }
 
   &__footer {
+    flex: 0 0 auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -872,9 +900,10 @@ body {
     display: inline-block;
     color: #f68038;
     background-color: #fff;
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 12px;
+    font-weight: 400;
     line-height: 24px;
+
     &.outstock {
       display: none;
     }
@@ -889,6 +918,7 @@ body {
     text-decoration: line-through;
     text-align: right;
     margin: 0 0 5px 0;
+
     &::after {
       margin: 0 0 0 5px;
       font-size: 14px;
@@ -900,10 +930,28 @@ body {
     font-size: 24px;
     font-weight: 900;
     line-height: 24px;
+
     &::after {
       margin: 0 0 0 5px;
       font-size: 18px;
     }
+  }
+}
+
+.parameters {
+  &__item {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 24px;
+
+    span {
+      display: block;
+      color: #f68038;
+      font-weight: 900;
+      line-height: 18px;
+    }
+
+    margin: 0 0 5px 0;
   }
 }
 
