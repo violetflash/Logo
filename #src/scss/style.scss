@@ -572,48 +572,48 @@ body {
 //===============================================================================
 .products {
   display: flex;
-  margin: 0 -15px;
-  // .items-products__column
-  &__column {
-    padding: 0 15px;
+  margin: 0 0 0 -30px;
+  flex-wrap: wrap;
+
+  .product {
     flex: 0 1 33.333%;
-    display: flex;
-    flex-direction: column;
+    margin: 0 0 30px 30px;
+    &__title {
+      margin: 0 0 16px 0;
+    }
 
-    .product {
-      margin: 0 0 30px 0;
+    &__image {
+      min-height: 205px;
+    }
 
-      &__title {
-        margin: 0 0 16px 0;
-      }
+    @media (min-width: $md2+px) {
+      &:hover {
+        .hover {
+          opacity: 1;
+          visibility: visible;
 
-      &__image {
-        min-height: 205px;
-      }
+          &__cart {
+            &::before {
+              transform: translateY(0)
+            }
 
-      @media (min-width: $md2+px) {
-        &:hover {
-          .hover {
-            opacity: 1;
-            visibility: visible;
-
-            &__cart {
-              &::before {
-                transform: translateY(0)
-              }
-
-              &::after {
-                transform: translate(-50%, -50%) scale(1.6);
-              }
+            &::after {
+              transform: translate(-50%, -50%) scale(1.6);
             }
           }
-
-          .product__body,
-          .product__footer {
-            opacity: 0;
-            visibility: hidden;
-          }
         }
+
+        .product__body,
+        .product__footer {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .product__labels,
+        .product__label {
+          display: none;
+        }
+
       }
     }
   }
@@ -636,6 +636,12 @@ body {
     .product__labels,
     .sale {
       display: block;
+    }
+
+    .product__old-price,
+    .hover__old-price {
+      opacity: 1;
+      visibility: visible;
     }
   }
 
@@ -662,11 +668,12 @@ body {
     }
   }
 
+
   &__labels {
     display: none;
     position: absolute;
-    top: 0;
-    left: 23px;
+    top: 10px;
+    left: 10px;
   }
 
   &__label {
@@ -720,6 +727,8 @@ body {
   }
 
   &__old-price {
+    opacity: 0;
+    visibility: hidden;
     flex: 1 1 100%;
     color: #999999;
     font-size: 18px;
@@ -840,11 +849,12 @@ body {
     @media (min-width: $md2+px) {
       &:hover {
         color: #f68038;
+
         span {
           color: #f68038;
         }
       }
-    }    
+    }
 
     span {
       display: block;
@@ -910,6 +920,8 @@ body {
   }
 
   &__old-price {
+    opacity: 0;
+    visibility: hidden;
     flex: 0 1 100%;
     color: #999999;
     font-size: 18px;
