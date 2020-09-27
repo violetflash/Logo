@@ -88,8 +88,9 @@ try {
 }
 catch {}
 
-if (document.querySelector('.products-slider')) {
 
+
+if (document.querySelector('.products-slider')) {
 
   let productsSlider = new Swiper('.products-slider__item', {
 
@@ -119,9 +120,14 @@ if (document.querySelector('.products-slider')) {
     // },
     // Arrows
 
+    pagination: {
+      el: '.products-slider__info',
+      type: 'fraction',
+    },
+
     navigation: {
-      nextEl: '.product-slider__arrow--next',
-      prevEl: '.product-slider__arrow',
+      nextEl: '.products-slider__next',
+      prevEl: '.products-slider__prev',
     },
     // on: {
     //   lazyImageReady: function () {
