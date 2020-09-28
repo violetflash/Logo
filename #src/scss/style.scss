@@ -422,6 +422,13 @@ body {
           }
         }
       }
+
+      &__img {
+        max-height: 140px;
+      }
+      &__image {
+        height: 160px;
+      }
     }
 
     .product__labels {
