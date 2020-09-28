@@ -1,13 +1,17 @@
-/*Обнуление*/
-html {
-  box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+
+
+
 
 a {
   text-decoration: none;

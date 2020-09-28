@@ -95,10 +95,10 @@ if (document.querySelector('.products-slider')) {
   let productsSlider = new Swiper('.products-slider__item', {
 
     // effect: 'fade',
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
     // observer: true,
     // observeParents: true,
     // slidesPerView: 1,

@@ -582,8 +582,21 @@ body {
   flex-wrap: wrap;
 
   .product {
-    flex: 0 1 263px;
+    flex: 0 1 calc(33.333% - 30px);
     margin: 0 0 30px 30px;
+    @media (max-width: $md1+px) {
+      flex: 0 1 calc(50% - 30px);
+    }
+    @media (max-width: $md2+px) {
+      flex: 0 1 calc(33.333% - 30px);
+    }
+    @media (max-width: 849px) {
+      flex: 0 1 calc(50% - 30px);
+    }
+    @media (max-width: 600px) {
+      flex: 0 1 100%;
+    }
+
     &__title {
       margin: 0 0 16px 0;
     }
