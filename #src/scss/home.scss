@@ -217,11 +217,12 @@
   }
 
   &__arrow {
+    outline: transparent;
     cursor: pointer;
     @media (min-width: $md2+px) {
       &:hover {
-        #path {
-          fill: #009cb0;
+        svg path {
+          stroke: #009cb0;
         }
       }
     }
