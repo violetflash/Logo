@@ -223,21 +223,6 @@
   &__icon {
   }
 
-  &__arrow {
-    outline: transparent;
-    cursor: pointer;
-    @media (min-width: $md2+px) {
-      &:hover {
-        svg path {
-          stroke: #009cb0;
-        }
-      }
-    }
-    @media (max-width: $md3+px) {
-      display: none;
-    }
-  }
-
   &__info {
     margin: 0 24px;
   }
@@ -269,5 +254,58 @@
   &__items {
   }
 
+}
+
+.slider-arrow {
+  outline: transparent;
+  cursor: pointer;
+  @media (min-width: $md2+px) {
+    &:hover {
+      svg path {
+        stroke: #009cb0;
+      }
+    }
+  }
+  @media (max-width: $md3+px) {
+    display: none;
+  }
+}
+
+.brands-slider {
+  padding: 36px 0;
+  margin: 0 0 32px 0;
+  border-top: 3px dashed #dadada;
+  border-bottom: 3px dashed #dadada;
+
+  // .brands-slider__container
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  // .brands-slider__slider
+  &__slider {
+  }
+
+  // .brands-slider__slide
+  &__slide {
+  }
+
+  // .brands-slider__line
+  &__line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //margin: 0 auto;
+  }
+
+  .swiper-container {
+    max-width: 980px;
+    width: 100%;
+  }
+  // .brands-slider__link
+  &__link {
+  }
 
 }
+

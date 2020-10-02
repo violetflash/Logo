@@ -95,13 +95,14 @@ body {
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ >=============================================================================
 
 .page {
-  padding: 183px 0 50px 0;
+  padding: 183px 0 0 0;
   flex: 1 0 auto;
   @media (max-width: 640 + px) {
     padding: 90px 0 0 0;
   }
 
   &__container {
+    padding: 0 0 50px 0;
     @media (min-width: $md2+px) {
       display: flex;
     }
@@ -148,6 +149,9 @@ body {
 
   &__products {
 
+  }
+
+  &__brands-slider {
   }
 }
 
@@ -668,6 +672,7 @@ body {
   }
 
   &.outstock {
+    .product__labels,
     .outstock {
       display: inline-block;
     }
