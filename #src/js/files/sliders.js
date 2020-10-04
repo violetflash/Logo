@@ -149,7 +149,7 @@ if (document.querySelector('.page__brands-slider')) {
     // },
     // observer: true,
     // observeParents: true,
-    // slidesPerView: 1,
+    slidesPerView: 5,
     // // spaceBetween: 0,
     // autoHeight: true,
     speed: 800,

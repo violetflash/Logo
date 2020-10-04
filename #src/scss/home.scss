@@ -289,14 +289,21 @@
 
   // .brands-slider__slide
   &__slide {
-  }
 
-  // .brands-slider__line
-  &__line {
+    padding: 0 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    //margin: 0 auto;
+    justify-content: center;
+    img {
+      max-width: 100%;
+      filter: grayscale(1);
+      transition: all .3s ease 0s;
+      @media (min-width: $md2+px) {
+        &:hover {
+          filter: grayscale(0);
+        }
+      }    
+    }
   }
 
   .swiper-container {
