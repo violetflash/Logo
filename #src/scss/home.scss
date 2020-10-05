@@ -273,7 +273,6 @@
 
 .brands-slider {
   padding: 36px 0;
-  margin: 0 0 32px 0;
   border-top: 3px dashed #dadada;
   border-bottom: 3px dashed #dadada;
   @media (max-width: $md3+px) {
@@ -331,8 +330,10 @@
 }
 
 .about {
-  margin: 0 0 40px 0;
   &__container {
+  }
+
+  &__body {
     padding: 45px 57px 60px 37px;
     min-height: 713px;
     background-image: url('../images/about-bg.png');
@@ -346,7 +347,14 @@
     font-family: UniSansHeavyCaps, sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.75px;
-    margin: 0 0 33px 0;
+    margin: 0 0 25px 0;
+  }
+
+  &__subtitle {
+    font-weight: 900;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
   }
 
   &__content {
@@ -360,19 +368,58 @@
     font-size: 12px;
     line-height: 20px;
     letter-spacing: 0.3px;
+    position: relative;
     &:last-child {
-      margin: 0 auto;
+      margin: 0;
+      flex: 0 1 480px;
     }
-    span {
-      margin: 26px 0 0 0;
+    p {
+      margin: 0 0 26px 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__list {
+
+  }
+
+  &__item {
+    // text-indent: 35px;
+    &::before {
+      content: '';
+      display: inline-block;
+      margin: 0 17px 0 7px;
+      background-image: url('../images/icons/arrow-about.png');
+      background-position: 0  0;
+      background-repeat: no-repeat;
+      width: 11px;
+      height: 11px;
+      // top: 4px;
+      // left: 7px;
+    }
+
+    &--girl {
+      span {
+        display: block;
+      }
+    }
+  }
+
+  &__girl {
+    position: absolute;
+    right: -130px;
+    bottom: -300px;
+    img {
+      // max-width: 100%;
+      
     }
   }
 }
 
-.information {
+.info-menu {
   padding: 25px 0;
-  height: 3px;
-  color: #dadada;
   border-bottom: 3px dashed #dadada;
   border-top: 3px dashed #dadada;
   
@@ -381,10 +428,12 @@
   }
 
   &__row {
-    display: block;
+    display: inline-block;
+    padding: 0 0 23px;
     border-bottom: 1px solid #b0b0b0;
     &:last-child {
       border-bottom: none;
+      padding: 18px 0 0 0;
     }
   }
 
@@ -394,6 +443,7 @@
 
   &__item {
     display: inline-block;
+    padding: 0 36px 0 0;
   }
 
   &__link {
@@ -401,6 +451,7 @@
     font-size: 12px;
     font-weight: 300;
     line-height: 24px;
+    transition: all .3s ease 0s;
     &:hover {
       color: #333333;
     }
