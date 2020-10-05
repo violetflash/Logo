@@ -147,10 +147,10 @@ if (document.querySelector('.page__brands-slider')) {
     //   delay: 3000,
     //   disableOnInteraction: false,
     // },
-    // observer: true,
-    // observeParents: true,
+    observer: true,
+    observeParents: true,
     slidesPerView: 5,
-    // // spaceBetween: 0,
+    spaceBetween: 30,
     // autoHeight: true,
     speed: 800,
     loop: true,
@@ -177,6 +177,23 @@ if (document.querySelector('.page__brands-slider')) {
       nextEl: '.brands-slider__arrow--next',
       prevEl: '.brands-slider__arrow--prev',
     },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 40
+      }
+    }
     // on: {
     //   lazyImageReady: function () {
     //     ibg();

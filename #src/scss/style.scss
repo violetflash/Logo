@@ -102,7 +102,7 @@ body {
   }
 
   &__container {
-    padding: 0 0 50px 0;
+    margin-bottom: 50px;
     @media (min-width: $md2+px) {
       display: flex;
     }

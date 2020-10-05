@@ -279,21 +279,32 @@
 
   // .brands-slider__container
   &__container {
-    display: flex;
-    align-items: center;
+    position: relative;
   }
 
   // .brands-slider__slider
   &__slider {
+    margin: 0 80px;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    &--next {
+      right: 20px;
+      left: auto;
+    }
   }
 
   // .brands-slider__slide
   &__slide {
-
-    padding: 0 10px;
+    height: auto;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
     img {
       max-width: 100%;
       filter: grayscale(1);
@@ -306,14 +317,11 @@
     }
   }
 
-  .swiper-container {
-    max-width: 980px;
-    width: 100%;
-  }
-  // .brands-slider__link
   &__link {
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
   }
-
 }
 
 .about {
