@@ -200,7 +200,7 @@
 
   // .products-slider__title
   &__title {
-    flex: 1 1 auto; 
+    flex: 1 1 auto;
     color: #dadada;
     font-family: "UniSansHeavyCaps", sans-serif;
     font-size: 36px;
@@ -217,7 +217,7 @@
     @media (max-width: $md2+px) {
       margin: 20px 0 0 0;
       justify-content: center;
-    }  
+    }
   }
 
   &__icon {
@@ -253,7 +253,6 @@
   // .products-slider__items
   &__items {
   }
-
 }
 
 .slider-arrow {
@@ -313,12 +312,12 @@
     img {
       max-width: 100%;
       filter: grayscale(1);
-      transition: all .3s ease 0s;
+      transition: all 0.3s ease 0s;
       @media (min-width: $md2+px) {
         &:hover {
           filter: grayscale(0);
         }
-      }    
+      }
     }
   }
 
@@ -334,11 +333,14 @@
   }
 
   &__body {
-    padding: 45px 57px 60px 37px;
+    padding: 20px;
     min-height: 713px;
-    background-image: url('../images/about-bg.png');
+    background-image: url("../images/about-bg.png");
     background-position: 0 0;
-    background-repeat: no-repeat;
+
+    @media (min-width: $md3+px) {
+      padding: 45px 57px 60px 37px;
+    }
   }
 
   &__title {
@@ -358,21 +360,33 @@
   }
 
   &__content {
-    display: flex;
+    @media (min-width: $md2+px) {
+      display: flex;
+    }
   }
 
   &__column {
-    flex: 0 1 510px;
-    margin: 0 60px 0 0;
     color: #ffffff;
     font-size: 12px;
     line-height: 20px;
     letter-spacing: 0.3px;
     position: relative;
+    margin: 0 0 50px 0;
+
+    @media (min-width: $md2+px) {
+      flex: 0 1 510px;
+      margin: 0 60px 0 0;
+
+      &:last-child {
+        margin: 0;
+        flex: 0 1 480px;
+      }
+    }
+
     &:last-child {
       margin: 0;
-      flex: 0 1 480px;
     }
+
     p {
       margin: 0 0 26px 0;
       &:last-child {
@@ -382,17 +396,16 @@
   }
 
   &__list {
-
   }
 
   &__item {
     // text-indent: 35px;
     &::before {
-      content: '';
+      content: "";
       display: inline-block;
       margin: 0 17px 0 7px;
-      background-image: url('../images/icons/arrow-about.png');
-      background-position: 0  0;
+      background-image: url("../images/icons/arrow-about.png");
+      background-position: 0 0;
       background-repeat: no-repeat;
       width: 11px;
       height: 11px;
@@ -402,7 +415,9 @@
 
     &--girl {
       span {
-        display: block;
+        @media (min-width: $md1+px) {
+          display: block;
+        }
       }
     }
   }
@@ -411,9 +426,13 @@
     position: absolute;
     right: -130px;
     bottom: -300px;
+
+    @media (max-width: $md1+px) {
+      display: none;
+    }
+
     img {
       // max-width: 100%;
-      
     }
   }
 }
@@ -422,9 +441,8 @@
   padding: 25px 0;
   border-bottom: 3px dashed #dadada;
   border-top: 3px dashed #dadada;
-  
-  &__container {
 
+  &__container {
   }
 
   &__row {
@@ -438,7 +456,6 @@
   }
 
   &__list {
-
   }
 
   &__item {
@@ -451,7 +468,7 @@
     font-size: 12px;
     font-weight: 300;
     line-height: 24px;
-    transition: all .3s ease 0s;
+    transition: all 0.3s ease 0s;
     &:hover {
       color: #333333;
     }
@@ -464,5 +481,3 @@
     letter-spacing: 0.35px;
   }
 }
-
-
