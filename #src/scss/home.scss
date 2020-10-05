@@ -276,6 +276,9 @@
   margin: 0 0 32px 0;
   border-top: 3px dashed #dadada;
   border-bottom: 3px dashed #dadada;
+  @media (max-width: $md3+px) {
+    padding: 15px 0;
+  }
 
   // .brands-slider__container
   &__container {
@@ -285,6 +288,9 @@
   // .brands-slider__slider
   &__slider {
     margin: 0 80px;
+    @media (max-width: $md3+px) {
+      margin: 0 auto;
+    }
   }
 
   &__arrow {

@@ -149,7 +149,7 @@ if (document.querySelector('.page__brands-slider')) {
     // },
     observer: true,
     observeParents: true,
-    slidesPerView: 5,
+    // slidesPerView: 1,
     spaceBetween: 30,
     // autoHeight: true,
     speed: 800,
@@ -185,13 +185,20 @@ if (document.querySelector('.page__brands-slider')) {
       },
       // when window width is >= 480px
       480: {
-        slidesPerView: 3,
-        spaceBetween: 30
+        slidesPerView: 2,
+        spaceBetween: 20
       },
       // when window width is >= 640px
-      640: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      992: {
         slidesPerView: 4,
-        spaceBetween: 40
+        // spaceBetween: 40
+      },
+      1200: {
+        slidesPerView: 5,
       }
     }
     // on: {
