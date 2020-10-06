@@ -446,6 +446,7 @@
   }
 
   &__body {
+    display: inline-block;
     @media (max-width: $md3+px) {
       display: flex;
       justify-content: space-around;
