@@ -445,30 +445,44 @@
   &__container {
   }
 
-  &__row {
-    display: inline-block;
-    padding: 0 0 23px;
-    border-bottom: 1px solid #b0b0b0;
-    &:last-child {
-      border-bottom: none;
-      padding: 18px 0 0 0;
+  &__body {
+    @media (max-width: $md3+px) {
+      display: flex;
+      justify-content: space-around;
     }
   }
 
   &__list {
+    @media (min-width: $md3+px) {
+      padding: 0 0 23px;
+      border-bottom: 1px solid #b0b0b0;
+    }
+    &:last-child {
+      border-bottom: none;
+      @media (min-width: $md3+px) {
+        padding: 18px 0 0 0;
+      }
+    }
   }
 
   &__item {
-    display: inline-block;
-    padding: 0 36px 0 0;
+    @media (min-width: $md3+px) {
+      display: inline-block;
+      padding: 0 36px 0 0;
+    }
   }
 
   &__link {
+    display: inline-block;
     color: #1ab9ce;
     font-size: 12px;
     font-weight: 300;
     line-height: 24px;
     transition: all 0.3s ease 0s;
+
+    @media (max-width: $md3+px) {
+      padding: 5px 0;
+    }
     &:hover {
       color: #333333;
     }
