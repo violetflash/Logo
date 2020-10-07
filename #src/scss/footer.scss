@@ -1,5 +1,11 @@
 .footer {
   flex: 0 0 auto;
+
+  &__info-menu {
+    margin: 0 0 38px 0;
+    z-index: -1;
+  }
+
   // .footer__container
   &__container {
   }
@@ -9,24 +15,52 @@
     display: flex;
     padding: 0 0 25px 0;
     border-bottom: 1px solid #dadada;
+    @media (max-width: $md1+px) {
+      flex-direction: column;
+      justify-content: center;
+
+    }
+
   }
 
   // .footer__column
   &__column {
-    //flex: 0 1 590px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 27px 0 0;
+    @media (min-width: $md1+px) {
+      margin: 0 27px 0 0;
+    }  
+    &:first-child {
+      flex: 0 0 550px;
+    }
+
     &:last-child {
+      flex: 1 1 auto;
       margin: 0;
+    }
+    
+    @media (max-width: $md1+px) {
+      &:first-child,
+      &:last-child {
+        flex: 0 0 auto;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    margin: 0 0 30px 0;
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: center;
     }
   }
 
   // .footer__contacts
   &__contacts {
-    flex: 0 1 165px;
-    margin: 0 50px 45px 0;
+    flex: 0 0 165px;
+    margin: 0 50px 0 0;
+    @media (max-width: 640px) {
+      margin: 0 0 30px 0;
+    }
   }
 
   // .footer__logo
@@ -65,29 +99,35 @@
     font-weight: 900;
     line-height: 18px;
     text-transform: uppercase;
-    margin: 0 0 13px 0;
+    margin: 0 0 5px 0;
 
     &:last-child {
-      margin: 0 auto;
+      margin: 0;
     }
   }
 
   // .footer__delivery
   &__delivery {
     flex: 0 1 330px;
+    @media (max-width: $md1+px) {
+      flex: 0 1 100%;
+    }  
   }
 
   // .footer__payment
   &__payment {
-    //flex: 0 1 100%;
+    margin: 45px 0 0 0;
   }
 
   // .footer__bottom
   &__bottom {
     padding: 15px 0 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    text-align: center;
+    @media (min-width: $md4+px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   // .footer__copyright
@@ -96,6 +136,7 @@
     font-size: 12px;
     font-weight: 300;
     line-height: 18px;
+    margin: 0 15px 0 0;
   }
 
   // .footer__socials
@@ -105,7 +146,6 @@
 }
 
 .delivery {
-
   // .delivery__caption
   &__caption {
     color: #999999;
@@ -114,17 +154,20 @@
     text-transform: uppercase;
     letter-spacing: 0.35px;
     margin: 0 0 30px 0;
+    @media (max-width: 640px) {
+      text-align: center;
+      margin: 0 0 15px 0;
+    }
   }
-
-  // .delivery__list
-
 
   // .delivery__item
   &__row {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    margin: 0 0 27px 0;
+    margin: 0 0 27px -10px;
+    
+
     &:last-child {
       margin: 0;
     }
@@ -132,6 +175,15 @@
 
   // .delivery__link
   &__link {
+    flex: 0 1 calc(33.333% - 10px);
+    margin: 0 10px 20px 0;
+    text-align: center;
+    
+    @media (max-width: $md1+px) {
+      flex: 0 1 auto;
+      margin: 0 30px 20px 0;
+
+    }
     img {
       max-width: 100%;
       max-height: 38px;
@@ -141,15 +193,29 @@
 }
 
 .payment {
+  margin: 0 0 30px 0;
+  @media (min-width: $md1+px) {
+    display: inline-block;
+    margin: 0;
+  }  
+
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
+    @media (max-width: $md1+px) {
+      justify-content: center;
+    }  
+    //width: 100%;
   }
   // .payment__item
   &__item {
-    margin: 0 24px 0 0;
+    margin: 0 10px 0 0;
+    @media (min-width: $md4+px) {
+      margin: 0 24px 0 0;
+    }
     &:last-child {
-      margin: 0 auto;
+      margin: 0;
     }
   }
 
@@ -159,7 +225,15 @@
 }
 
 .widgets {
+  display: flex;
   justify-content: space-between;
+  @media (max-width: $md1+px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media (max-width: 560px) {
+    align-content: center;
+  }
   // .widgets__item
   &__item {
   }
@@ -168,6 +242,11 @@
 
 .socials {
   display: flex;
+  flex-wrap: wrap;
+  @media (max-width: $md4+px) {
+    justify-content: center;
+    margin: 15px 0 0 0;
+  }
   // .socials__item
   &__item {
     margin: 0 15px 0 0;

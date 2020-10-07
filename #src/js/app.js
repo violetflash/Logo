@@ -5,5 +5,7 @@
 @@include('files/script.js', {})
 @@include('files/dynamic-adapt.js', {})
 @@include('files/sliders.js', {})
+@@include('files/nouislider.js', {})
+
 // @@include('vendors.js', {})
 

@@ -33,7 +33,7 @@ body {
   // background-color: #e1ad01;
   // background-color: #272822;
   font-size: 14px;
-  height: 100%;
+  //height: 100%;
 
   &.lock {
     overflow: hidden;
@@ -157,10 +157,6 @@ body {
 
   &__about {
     margin: 0 0 40px 0;
-  }
-
-  &__info-menu {
-    margin: 0 0 38px 0;
   }
 }
 

@@ -181,9 +181,6 @@
     background-color: #989292;
   }
 
-  &__text3 {
-    color: #979797;
-  }
 }
 
 .products-slider {
@@ -425,14 +422,14 @@
   &__girl {
     position: absolute;
     right: -130px;
-    bottom: -300px;
+    bottom: -196px;
 
     @media (max-width: $md1+px) {
       display: none;
     }
 
     img {
-      // max-width: 100%;
+      width: 360px;
     }
   }
 }
