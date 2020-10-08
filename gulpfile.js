@@ -111,6 +111,7 @@ function cssLibs() {
     return src([
         "node_modules/swiper/swiper-bundle.css",
         "node_modules/normalize.css/normalize.css"
+
     ])
         .pipe(sourcemaps.init())
         .pipe(concat("libs.css")) //склеиваем их в один файл с указанным именем
@@ -202,7 +203,7 @@ function jsLibs() {
     return src([
         //подключаем разные js в общую библиотеку.
         "node_modules/swiper/swiper-bundle.js",
-        "node_modules/jquery/dist/jquery.js"
+        "node_modules/nouislider/distribute/nouislider.js"
 
     ])
         //pipe - функция, внутри которой мы пишем команды для gulp

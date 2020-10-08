@@ -86,12 +86,15 @@ for (let index = 0; index < menuParents.length; index++) {
 //SEARCH section
 
 //toggle checkbox box
-let searchSelectTitle = document.querySelector('.search__title');
-let searchSelectBox = document.querySelector('.categories-search');
-searchSelectTitle.addEventListener("click", function (e) {
-  searchSelectTitle.classList.toggle('_active');
-  _slideToggle(searchSelectBox);
-});
+try {
+  let searchSelectTitle = document.querySelector('.search__title');
+  let searchSelectBox = document.querySelector('.categories-search');
+  searchSelectTitle.addEventListener('click', function (e) {
+    searchSelectTitle.classList.toggle('_active');
+    _slideToggle(searchSelectBox);
+  });
+}
+catch {}
 
 
 //Calculating choices (checked checkboxes)
@@ -99,7 +102,7 @@ let checkboxCategories = document.querySelectorAll('.categories-search__checkbox
 
 for (let index = 0; index < checkboxCategories.length; index++) {
   const checkboxCategory = checkboxCategories[index];
-  checkboxCategory.addEventListener("change", function (e) {
+  checkboxCategory.addEventListener('change', function (e) {
     checkboxCategory.classList.toggle('_active');
 
     let checkboxActiveCategories = document.querySelectorAll('.categories-search__checkbox._active');
@@ -124,54 +127,75 @@ let searchUncheckAll = document.querySelector('.categories-search__uncheck-all')
 
 
 //check all button
-searchCheckAll.addEventListener("click", function (e) {
+try {
+  searchCheckAll.addEventListener("click", function (e) {
 
-  for (let index = 0; index < checkboxCategoryReal.length; index++) {
-    checkboxCategoryReal[index].checked = true;
-  }
-
-  //sync with choices counter
-  for (let index = 0; index < checkboxCategories.length; index++) {
-    const checkboxCategory = checkboxCategories[index];
-    checkboxCategory.classList.add('_active');
-
-    let checkboxActiveCategories = document.querySelectorAll('.categories-search__checkbox._active');
-
-    if (checkboxActiveCategories.length > 0) {
-      searchSelectTitle.classList.add('_selections');
-      let searchChoices = document.querySelector('.search__choice');
-      searchChoices.innerHTML = searchChoices.getAttribute('data-text') + ' ' + checkboxActiveCategories.length;
-    } else {
-      searchSelectTitle.classList.remove('_selections')
+    for (let index = 0; index < checkboxCategoryReal.length; index++) {
+      checkboxCategoryReal[index].checked = true;
     }
-  }
 
-});
+    //sync with choices counter
+    for (let index = 0; index < checkboxCategories.length; index++) {
+      const checkboxCategory = checkboxCategories[index];
+      checkboxCategory.classList.add('_active');
 
+      let checkboxActiveCategories = document.querySelectorAll('.categories-search__checkbox._active');
+
+      if (checkboxActiveCategories.length > 0) {
+        searchSelectTitle.classList.add('_selections');
+        let searchChoices = document.querySelector('.search__choice');
+        searchChoices.innerHTML = searchChoices.getAttribute('data-text') + ' ' + checkboxActiveCategories.length;
+      } else {
+        searchSelectTitle.classList.remove('_selections')
+      }
+    }
+  });
+}
+catch {}
+
+try {
 //uncheck
-searchUncheckAll.addEventListener("click", function (e) {
-  // searchSelectTitle.classList.add('_selections')
+  searchUncheckAll.addEventListener("click", function (e) {
+    // searchSelectTitle.classList.add('_selections')
 
-  for (let index = 0; index < checkboxCategoryReal.length; index++) {
-    checkboxCategoryReal[index].checked = false;
-  }
-
-  //sync with choices counter
-  for (let index = 0; index < checkboxCategories.length; index++) {
-    const checkboxCategory = checkboxCategories[index];
-    checkboxCategory.classList.remove('_active');
-
-    let checkboxActiveCategories = document.querySelectorAll('.categories-search__checkbox._active');
-
-    if (checkboxActiveCategories.length > 0) {
-      searchSelectTitle.classList.add('_selections');
-      let searchChoices = document.querySelector('.search__choice');
-      searchChoices.innerHTML = searchChoices.getAttribute('data-text') + ' ' + checkboxActiveCategories.length;
-    } else {
-      searchSelectTitle.classList.remove('_selections')
+    for (let index = 0; index < checkboxCategoryReal.length; index++) {
+      checkboxCategoryReal[index].checked = false;
     }
-  }
 
+    //sync with choices counter
+    for (let index = 0; index < checkboxCategories.length; index++) {
+      const checkboxCategory = checkboxCategories[index];
+      checkboxCategory.classList.remove('_active');
+
+      let checkboxActiveCategories = document.querySelectorAll('.categories-search__checkbox._active');
+
+      if (checkboxActiveCategories.length > 0) {
+        searchSelectTitle.classList.add('_selections');
+        let searchChoices = document.querySelector('.search__choice');
+        searchChoices.innerHTML = searchChoices.getAttribute('data-text') + ' ' + checkboxActiveCategories.length;
+      } else {
+        searchSelectTitle.classList.remove('_selections')
+      }
+    }
+  });
+}
+catch {}
+
+const priceSlider = document.querySelector('.price-filter');
+
+noUiSlider.create(priceSlider, {
+  start: [20, 80],
+  range: {
+    'min': [0],
+    'max': [100]
+  }
 });
+
+/*
+setButton.addEventListener('click', function () {
+  animatedSlider.noUiSlider.set(60);
+  unAnimatedSlider.noUiSlider.set(60);
+})
+*/
 //= (/SCRIPTS) =====================================================================================
 

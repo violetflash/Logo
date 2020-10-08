@@ -91,7 +91,8 @@ body {
 // @import "popup";
 @import "header";
 @import "footer";
-@import "home";
+@import "index";
+@import "catalog";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ >=============================================================================
 
 .page {
@@ -157,6 +158,9 @@ body {
 
   &__about {
     margin: 0 0 40px 0;
+  }
+
+  &__filter {
   }
 }
 

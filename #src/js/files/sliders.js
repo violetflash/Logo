@@ -89,7 +89,6 @@ try {
 catch {}
 
 
-
 if (document.querySelector('.products-slider')) {
 
   let productsSlider = new Swiper('.products-slider__item', {
@@ -142,36 +141,12 @@ if (document.querySelector('.page__brands-slider')) {
 
   let productsSlider = new Swiper('.brands-slider__slider', {
 
-    // effect: 'fade',
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+
     observer: true,
     observeParents: true,
-    // slidesPerView: 1,
     spaceBetween: 30,
-    // autoHeight: true,
     speed: 800,
     loop: true,
-
-    /*
-    touchRatio: 0,
-    simulateTouch: false,
-    preLoadImages: false,
-    lazy: true,
-    //Dots
-    */
-    // pagination: {
-    //   el: '.mainslider__dots',
-    //   clickable: true,
-    // },
-    // Arrows
-
-    // pagination: {
-    //   el: '.products-slider__info',
-    //   type: 'fraction',
-    // },
 
     navigation: {
       nextEl: '.brands-slider__arrow--next',
