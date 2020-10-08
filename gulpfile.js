@@ -8,8 +8,6 @@ let project_folder = "result";
 //каталог исходников
 let source_folder = "#src";
 
-let modules_folder = "node_modules";
-
 let fs = require('fs');
 
 //Переменная path, которая содержит объекты, которые в свою очередь будут содержать пути к файлам и папкам

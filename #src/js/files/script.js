@@ -1,3 +1,4 @@
+//(SCRIPTS) =====================================================================================
 let burgerHeader = document.querySelector('.menu__icon');
 
 let burgerHeaderMenu = document.querySelector('.menu__body');
@@ -172,3 +173,5 @@ searchUncheckAll.addEventListener("click", function (e) {
   }
 
 });
+//= (/SCRIPTS) =====================================================================================
+
