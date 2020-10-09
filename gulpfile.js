@@ -110,7 +110,8 @@ function cssLibs() {
     //библиотека из css-стилей плагинов
     return src([
         "node_modules/swiper/swiper-bundle.css",
-        "node_modules/normalize.css/normalize.css"
+        "node_modules/normalize.css/normalize.css",
+        "node_modules/nouislider/distribute/nouislider.css"
 
     ])
         .pipe(sourcemaps.init())
@@ -145,7 +146,7 @@ function cssLibs() {
                 extname: ".min.css"
             })
         )
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.'))
         .pipe(dest(path.build.css)) //кидаем готовый файл в директорию
         .pipe(size());
 }
@@ -193,7 +194,7 @@ function css() {
                 extname: ".min.css"
             })
         )
-        .pipe(sourcemaps.write()) //записываем карту в итоговый файл
+        .pipe(sourcemaps.write('.')) //записываем карту в итоговый файл
         .pipe(dest(path.build.css))
         .pipe(size())
         .pipe(browsersync.stream())
@@ -228,6 +229,7 @@ function js() {
         .pipe(fileinclude())
         //pipe - функция, внутри которой мы пишем команды для gulp
         .pipe(babel())
+        .pipe(sourcemaps.init())
         .pipe(dest(path.build.js)) //выгрузка
         .pipe(
             uglify()
@@ -237,6 +239,7 @@ function js() {
                 extname: ".min.js"
             })
         )
+        .pipe(sourcemaps.write('.'))
         .pipe(dest(path.build.js))
         .pipe(size())
         .pipe(browsersync.stream())

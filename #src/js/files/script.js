@@ -184,11 +184,22 @@ catch {}
 const priceSlider = document.querySelector('.price-filter');
 
 noUiSlider.create(priceSlider, {
-  start: [20, 80],
+  connect: true,
+  tooltips: true,
+  start: [0, 100],
   range: {
     'min': [0],
-    'max': [100]
+    'max': [200]
+  },
+  format: {
+    from: function(value) {
+      return parseInt(value);
+    },
+    to: function(value) {
+      return parseInt(value);
+    }
   }
+
 });
 
 /*

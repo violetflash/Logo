@@ -29,7 +29,7 @@
     font-size: 16px;
     font-weight: 900;
     line-height: 22px;
-    margin: 0 0 15px 0;
+    margin: 0 0 30px 0;
     min-height: 30px;
     display: flex;
     align-items: center;
@@ -44,45 +44,32 @@
 }
 
 .price-filter {
+  padding: 0 10px;
   height: 4px;
-  background-color: #eaeaea;
-  .noUi-target {
-    max-width: 100%;
-  }
-  .noUi-base {
-    position: relative;
-    width: 100%;
-    z-index: 1;
-  }
+
+  //default color of range slider
   .noUi-connects {
-    overflow: hidden;
-    z-index: 0;
+    background-color: #eaeaea;
   }
+
+  //colored (surrounded by handle-bars) path of slider
   .noUi-connect {
     background-color: #ffcda5;
-    width: 100%;
-    height: 100%;
   }
-  .noUi-origin {
-    will-change: transform;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    transform-origin: 0 0;
-    transform-style: flat;
-  }
+
+  //Handle-bars style and position
   .noUi-handle {
+    border-radius: 50%;
     width: 23px;
     height: 23px;
     border: 1px solid #f68038;
     background-color: #ffffff;
-    border-radius: 50%;
-    cursor: pointer;
+    position: absolute;
     top: -10px;
-    position: relative;
-
-    &::after {
+    right: -12px;
+    cursor: pointer;
+    
+    &::before {
       position: absolute;
       content: '';
       width: 15px;
@@ -92,7 +79,21 @@
       left: 3px;
       top: 3px;
     }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .noUi-tooltip {
+    bottom: -32px;
+    background-color: transparent;
+    border: none;
+    color: #999999;
+    font-size: 12px;
+    font-weight: 300;
   }
 }
+
 
 //===============================================================================
