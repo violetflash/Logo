@@ -111,7 +111,7 @@ function cssLibs() {
     return src([
         "node_modules/swiper/swiper-bundle.css",
         "node_modules/normalize.css/normalize.css",
-        "node_modules/nouislider/distribute/nouislider.css"
+        // "node_modules/nouislider/distribute/nouislider.css"
 
     ])
         .pipe(sourcemaps.init())

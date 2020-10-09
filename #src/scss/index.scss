@@ -161,7 +161,6 @@
 }
 
 .text-mainslider {
-  color: #fff;
   font-size: 14px;
   font-weight: 900;
   line-height: 24px;
@@ -187,6 +186,7 @@
   // .products-slider__header
   &__head {
     margin: 0 0 15px 0;
+    //noinspection SassScssResolvedByNameOnly
     @media (min-width: $md2 + px) {
       display: flex;
       justify-content: space-between;

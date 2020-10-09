@@ -160,7 +160,6 @@
     font-size: 14px;
     font-weight: 700;
     // line-height: 18px;
-    transition: all 0.3s ease 0s;
     @include focus;
     @media (max-width: $md1+px) {
       padding: 7px 10px;
