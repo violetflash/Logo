@@ -44,57 +44,82 @@
 }
 
 .price-filter {
-  padding: 0 10px;
-  height: 4px;
 
-  //default color of range slider
-  .noUi-connects {
-    background-color: #eaeaea;
-  }
+  &__slider {
+    padding: 0 10px;
+    height: 4px;
+    margin: 0 0 50px 0;
 
-  //colored (surrounded by handle-bars) path of slider
-  .noUi-connect {
-    background-color: #ffcda5;
-  }
+    //default color of range slider
+    .noUi-connects {
+      background-color: #eaeaea;
+    }
 
-  //Handle-bars style and position
-  .noUi-handle {
-    border-radius: 50%;
-    width: 23px;
-    height: 23px;
-    border: 1px solid #f68038;
-    background-color: #ffffff;
-    position: absolute;
-    top: -10px;
-    right: -12px;
-    cursor: pointer;
-    
-    &::before {
-      position: absolute;
-      content: '';
-      width: 15px;
-      height: 15px;
-      background-color: #f68038;
+    //colored (surrounded by handle-bars) path of slider
+    .noUi-connect {
+      background-color: #ffcda5;
+    }
+
+    //Handle-bars style and position
+    .noUi-handle {
       border-radius: 50%;
-      left: 3px;
-      top: 3px;
+      width: 23px;
+      height: 23px;
+      border: 1px solid #f68038;
+      background-color: #ffffff;
+      position: absolute;
+      top: -10px;
+      right: -12px;
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-color: #f68038;
+        border-radius: 50%;
+        left: 3px;
+        top: 3px;
+      }
+
+      &::after {
+        display: none;
+      }
     }
 
-    &::after {
-      display: none;
+    .noUi-tooltip {
+      bottom: -25px;
+      background-color: transparent;
+      border: none;
+      color: #999999;
+      font-size: 12px;
+      font-weight: 300;
     }
-  }
-
-  .noUi-tooltip {
-    bottom: -32px;
-    background-color: transparent;
-    border: none;
-    color: #999999;
-    font-size: 12px;
-    font-weight: 300;
   }
 }
 
+.values {
+  display: flex;
+  //align-items: center;
+
+  &__label {
+    flex: 0 1 50%;
+    display: flex;
+    align-items: center;
+    color: #999999;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: left;
+  }
+
+  &__input {
+    margin: 0 0 0 7px;
+    width: 62px;
+    border: 1px solid #dadada;
+    padding: 4px;
+  }
+}
 
 
 

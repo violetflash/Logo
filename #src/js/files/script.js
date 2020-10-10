@@ -181,15 +181,17 @@ try {
 }
 catch {}
 
-const priceSlider = document.querySelector('.price-filter');
+const priceSlider = document.querySelector('.price-filter__slider');
 
 noUiSlider.create(priceSlider, {
   connect: true,
   tooltips: true,
-  start: [0, 100],
+  start: [0, 100000],
+  step: 1000,
+  // margin: 5,
   range: {
     'min': [0],
-    'max': [200]
+    'max': [200000]
   },
   format: {
     from: function(value) {
@@ -199,8 +201,35 @@ noUiSlider.create(priceSlider, {
       return parseInt(value);
     }
   }
-
 });
+
+var valueFrom = document.querySelector('.values__from'),
+    valueTo = document.querySelector('.values__to');
+
+// When the slider value changes, update the input and span
+// priceSlider.noUiSlider.on('update', function( values, handle ) {
+//   if ( handle ) {
+//     valueTo.value = values[handle];
+//   } else {
+//     valueFrom.value = values[handle];
+//   }
+// });
+
+valueFrom.addEventListener('change', function(){
+  priceSlider.noUiSlider.set([null, this.value]);
+});
+
+valueTo.addEventListener('change', function(){
+  priceSlider.noUiSlider.set([null, this.value]);
+});
+
+// sliderFormat.noUiSlider.on('update', function (values, handle) {
+//   inputFormat.value = values[handle];
+// });
+//
+// inputFormat.addEventListener('change', function () {
+//   sliderFormat.noUiSlider.set(this.value);
+// });
 
 /*
 setButton.addEventListener('click', function () {
