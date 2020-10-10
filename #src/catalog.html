@@ -269,24 +269,54 @@
             </nav>
             <div class="page__filter filter">
               <div class="filter__title">Фильтр товаров</div>
-              <div class="filter__content">
+              <form class="filter__form">
                 <div class="filter__section">
-                  <div class="filter__caption">Цена (руб.):</div>
-                  <div class="filter__body">
-                    <div class="price-filter">
-                      <div class="price-filter__slider"></div>
-                      <div class="price-filter__values values">
-                        <label class="values__label">от
-                          <input class="values__input values__from" type="text">
-                        </label>
-                        <label class="values__label">до
-                          <input class="values__input values__to" type="text">
-                        </label>
-                      </div>
+                  <h3 class="filter__caption">Цена (руб.):</h3>
+                  <div class="price-filter">
+                    <div class="price-filter__slider"></div>
+                    <div class="price-filter__values values">
+                      <label class="values__label">от
+                        <input class="values__input values__from" type="text">
+                      </label>
+                      <label class="values__label">до
+                        <input class="values__input values__to" type="text">
+                      </label>
                     </div>
                   </div>
                 </div>
-              </div>
+                <div class="filter__section">
+                  <h3 class="filter__caption">Товары для сравнения:</h3>
+                  <div class="filter__comparsion comparsion">
+                    <div class="comparsion__items">
+                      <div class="comparsion__item">
+                        <a class="comparsion__link" href="">NordicTrack C100 ordicTrack C100</a>
+                        <button class="comparsion__remove" type="button"></button>
+                      </div>
+                      <div class="comparsion__item">
+                        <a class="comparsion__link" href="">Clear Fit Luxury LT.20</a>
+                        <button class="comparsion__remove" type="button"></button>
+                      </div>
+                      <div class="comparsion__item">
+                        <a class="comparsion__link" href="">Ammity ATM 720 TFT+</a>
+                        <button class="comparsion__remove" type="button"></button>
+                      </div>
+                    </div>
+                    <div class="comparsion__buttons">
+                      <button class="comparsion__compare" type="submit">сравнить</button>
+                      <button class="comparsion__clear" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter__section">
+                  <h3 class="filter__caption spoiler">Производитель:</h3>
+                  <div class="filter__manufacturer manufacturer">
+                    <label class="checkbox__label">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">clear-fit</span>
+                    </label>
+                  </div>
+                </div>
+              </form>
             </div>
           </aside>
 
