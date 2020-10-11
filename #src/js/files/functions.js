@@ -103,3 +103,54 @@ let _slideToggle = (target, duration = 500) => {
     }
 }
 //=====================================================================
+
+//=================================================================
+//Tabs
+let tabs = document.querySelectorAll('._tabs');
+for (let i = 0; i < tabs.length; i++) {
+    let tab = tabs[i];
+    let tabs_items = tab.querySelectorAll('.tabs-item');
+    let tabs_blocks = tab.querySelectorAll('._tabs-block');
+    for (let i = 0; j < tabs_items.length; j++) {
+        let tabs_item = tabs_items[i];
+        tabs_item.addEventListener('click', function (e) {
+            for (let i = 0; j < tabs_items.length; j++) {
+                let tabs_item = tabs_items[i];
+                tabs_item.classList.remove('._active');
+                tabs_blocks[i].classList.remove('._active');
+            }
+            tabs_item.classList.add('._active');
+            tabs_blocks[i].classList.add('._active');
+            e.preventDefault();
+        });
+    }
+}
+//=================================================================
+
+//=================================================================
+//Spoiler
+
+// let spoilers = document.querySelectorAll('.spoiler');
+// if (spoilers.length > 0) {
+//     for (let i = 0; i < spoilers.length; i++) {
+//         const spoiler = spoilers[i];
+//         spoiler.addEventListener('click', function(e) {
+//             if (spoiler.classList.contains('.spoiler-992') && window.innerWidth > 992) {
+//                 return false;
+//             }
+//             if (spoiler.classList.contains('.spoiler-768') && window.innerWidth > 768) {
+//                 return false
+//             }
+//             if (spoiler.closest('.spoilers').classList.contains('.one')) {
+//                 let current_spoilers = spoiler.closest('.spoilers').querySelectorAll('.spoiler');
+//                 for (let i = 0; i < current_spoilers.length; i++) {
+//                     let el = current_spoilers[i];
+//                     if (el != spoiler) {
+//                         el.classList.remove('.active');
+//                         _slideUp(el.nextElementSibling);
+//                     }
+//                 }
+//             }
+//         });
+//     }
+// }

@@ -269,24 +269,32 @@
             </nav>
             <div class="page__filter filter">
               <div class="filter__title">Фильтр товаров</div>
-              <form class="filter__form">
+              <form class="filter__form" action="#">
                 <div class="filter__section">
-                  <h3 class="filter__caption">Цена (руб.):</h3>
-                  <div class="price-filter">
-                    <div class="price-filter__slider"></div>
-                    <div class="price-filter__values values">
-                      <label class="values__label">от
-                        <input class="values__input values__from" type="text">
-                      </label>
-                      <label class="values__label">до
-                        <input class="values__input values__to" type="text">
-                      </label>
+                  <div class="filter__header">
+                    <h3 class="filter__caption">Цена (руб.):</h3>
+                    <button class="filter__spoiler" type="button"></button>
+                  </div>
+                  <div class="filter__body">
+                    <div class="price-filter">
+                      <div class="price-filter__slider"></div>
+                      <div class="price-filter__values values">
+                        <label class="values__label">от
+                          <input class="values__input values__from" type="text">
+                        </label>
+                        <label class="values__label">до
+                          <input class="values__input values__to" type="text">
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="filter__section">
-                  <h3 class="filter__caption">Товары для сравнения:</h3>
-                  <div class="filter__comparsion comparsion">
+                  <div class="filter__header">
+                    <h3 class="filter__caption">Товары для сравнения:</h3>
+                    <button class="filter__spoiler" type="button"></button>
+                  </div>
+                  <div class="filter__body comparsion">
                     <div class="comparsion__items">
                       <div class="comparsion__item">
                         <a class="comparsion__link" href="">NordicTrack C100 ordicTrack C100</a>
@@ -308,17 +316,383 @@
                   </div>
                 </div>
                 <div class="filter__section">
-                  <h3 class="filter__caption spoiler">Производитель:</h3>
-                  <div class="filter__manufacturer manufacturer">
-                    <label class="checkbox__label">
+                  <div class="filter__header spoiler">
+                    <h3 class="filter__caption">Производитель:</h3>
+                    <button class="filter__spoiler" type="button"></button>
+                  </div>
+                  <div class="filter__body manufacturers">
+                    <label class="checkbox">
                       <input class="checkbox__input" type="checkbox">
                       <span class="checkbox__text">clear-fit</span>
                     </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">Carbon-fitness</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">Сlear-fit</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">Diadora</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">Hasttings</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">Carbon-fitness</span>
+                    </label>
                   </div>
+                </div>
+                <div class="filter__section">
+                  <div class="filter__header spoiler">
+                    <h3 class="filter__caption">Мощность двигателя:</h3>
+                    <button class="filter__spoiler" type="button"></button>
+                  </div>
+                  <div class="filter__body capacity">
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">12</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">14</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">16</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">18</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">20</span>
+                    </label>
+
+                  </div>
+                </div>
+                <div class="filter__section">
+                  <div class="filter__header spoiler">
+                    <h3 class="filter__caption">Размер бегового полотна:</h3>
+                    <button class="filter__spoiler" type="button"></button>
+                  </div>
+                  <div class="filter__body capacity">
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">12</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">14</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">16</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">18</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">20</span>
+                    </label>
+
+                  </div>
+                </div>
+                <div class="filter__section">
+                  <div class="filter__header spoiler">
+                    <h3 class="filter__caption">Вес пользователя (макс.):</h3>
+                    <button class="filter__spoiler" type="button"></button>
+                  </div>
+                  <div class="filter__body capacity">
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">12</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">14</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">16</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">18</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">20</span>
+                    </label>
+
+                  </div>
+                </div>
+                <div class="filter__section">
+                  <div class="filter__header spoiler">
+                    <h3 class="filter__caption">Скорость (макс.):</h3>
+                    <button class="filter__spoiler" type="button"></button>
+                  </div>
+                  <div class="filter__body capacity">
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">12</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">14</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">16</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">18</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">20</span>
+                    </label>
+
+                  </div>
+                </div>
+                <div class="filter__section">
+                  <div class="filter__header">
+                    <h3 class="filter__caption">Угол наклона :</h3>
+                    <button class="filter__spoiler" type="button"></button>
+                  </div>
+                  <div class="filter__body capacity">
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">нет регулировки</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">механическая</span>
+                    </label>
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox">
+                      <span class="checkbox__text">электронная</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="filter__buttons">
+                  <button class="filter__button" type="submit">Подобрать</button>
+                  <button class="filter__button filter__button--reset" type="button">Сбросить</button>
                 </div>
               </form>
             </div>
           </aside>
+          <section class="page__content">
+            <form class="page__search search" action="#">
+              <div class="search__select">
+                <div class="search__title">
+                  <span>Везде</span>
+                  <span class="search__choice" data-text="Выбрано:"></span>
+                </div>
+                <div class="search__categories categories-search">
+                  <div class="categories-search__wrapper">
+                    <div class="categories-search__column">
+                      <ul class="categories-search__list">
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Беговые дорожки</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Эллиптические тренажеры</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Велотренажеры</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Гребные тренажеры</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Вибромассажеры</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="categories-search__column">
+                      <ul class="categories-search__list">
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Теннисные столы</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Эллиптические тренажеры</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Массажные кресла</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Массажные столы</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Силовые тренажеры</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="categories-search__column">
+                      <ul class="categories-search__list">
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Батуты</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Детские городки</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Дачная мебель</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Уличные спортивные комплексы</span>
+                          </label>
+                        </li>
+                        <li>
+                          <label class="categories-search__checkbox checkbox">
+                            <input class="categories-search__checkbox-input checkbox__input" type="checkbox" data-error="Ошибка" value="1"
+                                   name="form[]">
+                            <span class="categories-search__checkbox-text checkbox__text">Аксессуары</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="categories-search__footer">
+                    <div class="categories-search__check-all btn">Выбрать все</div>
+                    <div class="categories-search__uncheck-all btn">Снять выбранные</div>
+                  </div>
+                </div>
+              </div>
+              <div class="search__input">
+                <input type="search" autocomplete="off" name="form[]" data-error="Ошибка" data-value="">
+              </div>
+              <button class="search__btn btn" type="submit">Найти</button>
+            </form>
+            <div class="breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="">Главная</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <a class="breadcrumbs__link" href="">Тестовый хлебушек</a>
+                </li>
+
+                <li class="breadcrumbs__item">
+                  <span class="breadcrumbs__page">Каталог товара</span>
+                </li>
+              </ul>
+            </div>
+            <div class="catalog">
+              <h1 class="catalog__title">Популярные товары</h1>
+              <div class="catalog__actions">
+                <label class="select">
+                  Сортировать по:
+                  <span class="select__wrapper">
+                    <select class="select__select">
+                      <option>По умолчанию</option>
+                      <option>По цене</option>
+                      <option>По рейтингу</option>
+                    </select>
+                  </span>
+                </label>
+                <div class="catalog__view">
+                  <button class="catalog__button catalog__grid active"></button>
+                  <button class="catalog__button catalog__list"></button>
+                </div>
+              </div>
+              <div class="catalog__navi navi">
+                <label class="select">
+                  На странице:
+                  <span class="select__wrapper">
+                    <select class="select__select">
+                      <option>9</option>
+                      <option>12</option>
+                      <option>18</option>
+                    </select>
+                  </span>
+                </label>
+                <div class="catalog__pagination pagination">
+                  <a class="pagination__arrow prev-arrow" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="29" viewBox="0 0 33 29"><defs><clipPath id="gd31a"><path fill="#fff" d="M0 29V0h33v29zM29.945 9.199H17.524V3.511L2.95 14.5l14.573 10.99v-5.688h12.42z"/></clipPath></defs><g><g><path fill="none" d="M29.945 19.803H17.524v5.688L2.95 14.501l14.573-10.99v5.688h12.42z"/><path fill="none" stroke="#e7e7e7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="20" stroke-width="6" d="M29.945 19.803v0H17.524v5.688L2.95 14.501v0l14.573-10.99v5.688h12.42v0z" clip-path="url(&quot;#gd31a&quot;)"/></g></g></svg>
+                  </a>
+                  <ul class="pagination__list">
+                    <li class="pagination__item"><a class="pagination__link" href="">1</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="">2</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="">3</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="">4</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="">5</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="">...</a></li>
+                    <li class="pagination__item"><a class="pagination__link" href="">10</a></li>
+                  </ul>
+                  <a class="pagination__arrow next-arrow" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33" height="29" viewBox="0 0 33 29"><defs><clipPath id="i68ta"><path fill="#fff" d="M0 29V0h33v29zm3.009-9.197h12.42v5.688l14.574-10.99L15.43 3.511v5.688H3.01z"/></clipPath></defs><g><g><path fill="none" d="M3.009 19.803h12.42v5.688l14.574-10.99L15.43 3.511v5.688H3.01z"/><path id="path" fill="none" stroke="#e7e7e7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="20" stroke-width="6" d="M3.009 19.803v0h12.42v5.688l14.574-10.99v0L15.43 3.511v5.688H3.01v0z" clip-path="url(&quot;#i68ta&quot;)"/></g></g></svg>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
 
         </div>
 

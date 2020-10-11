@@ -74,7 +74,7 @@ if (document.querySelector('.search')) {
     });
 
 
-//Calculating choices (checked checkboxes)
+    //Calculating choices (checked checkboxes)
     let checkboxCategories = document.querySelectorAll('.categories-search__checkbox');
 
     for (let index = 0; index < checkboxCategories.length; index++) {
@@ -95,7 +95,7 @@ if (document.querySelector('.search')) {
     }
 
 
-//check/uncheck all checkboxes
+    //check and uncheck all checkboxes
     let checkboxCategoryReal = document.querySelectorAll('.categories-search__checkbox-input');
 
     let searchCheckAll = document.querySelector('.categories-search__check-all');
@@ -103,8 +103,7 @@ if (document.querySelector('.search')) {
     let searchUncheckAll = document.querySelector('.categories-search__uncheck-all');
 
 
-//check all button
-
+    //check all button
     searchCheckAll.addEventListener("click", function (e) {
 
         for (let index = 0; index < checkboxCategoryReal.length; index++) {
@@ -129,9 +128,8 @@ if (document.querySelector('.search')) {
     });
 
 
-//uncheck
+    //uncheck all
     searchUncheckAll.addEventListener("click", function (e) {
-        // searchSelectTitle.classList.add('_selections')
 
         for (let index = 0; index < checkboxCategoryReal.length; index++) {
             checkboxCategoryReal[index].checked = false;
@@ -182,7 +180,7 @@ if (document.querySelector('.price-filter')) {
     var valueFrom = document.querySelector('.values__from'),
         valueTo = document.querySelector('.values__to');
 
-// When the slider value changes, update the input and span
+    // When the slider value changes, update the inputs
     priceSlider.noUiSlider.on('update', function (values, handle) {
         if (handle) {
             valueTo.value = values[handle];
@@ -190,7 +188,9 @@ if (document.querySelector('.price-filter')) {
             valueFrom.value = values[handle];
         }
     });
+    //
 
+    //reading data from inputs
     valueFrom.addEventListener('change', function () {
         priceSlider.noUiSlider.set([this.value]);
     });
@@ -198,22 +198,63 @@ if (document.querySelector('.price-filter')) {
     valueTo.addEventListener('change', function () {
         priceSlider.noUiSlider.set([valueFrom.value, this.value]);
     });
+    //
+}
 
-// sliderFormat.noUiSlider.on('update', function (values, handle) {
-//   inputFormat.value = values[handle];
-// });
-//
-// inputFormat.addEventListener('change', function () {
-//   sliderFormat.noUiSlider.set(this.value);
-// });
+//FILTERS
+if (document.querySelector('.filter')) {
 
-    /*
-    setButton.addEventListener('click', function () {
-      animatedSlider.noUiSlider.set(60);
-      unAnimatedSlider.noUiSlider.set(60);
-    })
-    */
+    //Toggling main filters box
+    let filterTitle = document.querySelector('.filter__title');
+    filterTitle.addEventListener('click', function(e) {
+        _slideToggle(filterTitle.nextElementSibling)
+    });
+    //
+    
+    //Toggling spoilers
+    let sectionSpoilers = document.querySelectorAll('.spoiler');
+    if (sectionSpoilers.length > 0) {
 
+        for (let i = 0; i < sectionSpoilers.length; i++) {
+            let sectionSpoiler = sectionSpoilers[i]
+
+            sectionSpoiler.addEventListener('click', function (e) {
+                sectionSpoiler.classList.toggle('active');
+                _slideToggle(sectionSpoiler.nextElementSibling);
+            });
+        }
+    }
+    //
+
+    //Reset all checkboxes
+    let filterReset = document.querySelector('.filter__button--reset');
+    filterCheckboxes = document.querySelectorAll('.filter .checkbox__input');
+
+    filterReset.addEventListener("click", function (e) {
+
+        for (let index = 0; index < filterCheckboxes.length; index++) {
+            filterCheckboxes[index].checked = false;
+        }
+    });
+    //
+}
+
+//CATALOG SORT
+if (document.querySelector('.catalog')) {
+
+    //List / Grid switch
+    let grid = document.querySelector('.catalog__grid');
+    let list = document.querySelector('.catalog__list');
+
+    grid.addEventListener('click', function(e) {
+        list.classList.remove('active');
+        grid.classList.add('active');
+    });
+
+    list.addEventListener('click', function(e) {
+        grid.classList.remove('active');
+        list.classList.add('active');
+    });
 }
 //= (/SCRIPTS) =====================================================================================
 
