@@ -1,16 +1,13 @@
-//<ГОТОВЫЕ КЛАССЫ>=============================================================================================================
 .rub::after {
   content: '₽';
 }
-
-
 
 .ibg {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  
+
   img {
     width: 0;
     height: 0;
@@ -19,6 +16,59 @@
     left: 0;
     opacity: 0;
     visibility: hidden;
+  }
+}
+
+.checkbox {
+  position: relative;
+
+  &__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    &:checked + .checkbox__text::before {
+      background-image: url("../images/icons/check.svg");
+      background-color: #fff;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__text {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    font-size: 16px;
+    color: #272822;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    cursor: pointer;
+    &::before {
+      content: "";
+      align-items: flex-start;
+      margin: 0 14px 0 0;
+      flex: 0 0 20px;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 18px;
+      background: #fff;
+      border: 1px solid #a7a9ac;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+    @media (min-width: $md2+px) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -57,7 +107,6 @@
         display: none;
       }
     }
-    
   }
 
   &__link {
@@ -65,7 +114,7 @@
     color: inherit;
     text-decoration: underline;
   }
-  
+
   &__page {
     display: inline-block;
     color: inherit;
@@ -73,6 +122,52 @@
   }
 }
 
+.select {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 18px;
+  @media (max-width: $md4+px) {
+    max-width: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+    background-color: #fff;
+    margin: 0 0 0 20px;
+    @media (max-width: $md4+px) {
+      margin: 0;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 14px;
+      height: 8px;
+      background: url('../images/icons/select-arrow.svg') center no-repeat;
+      right: 8px;
+      top: 5px;
+    }
+  }
+
+  &__select {
+    padding: 10px 8px 10px 16px;
+    //padding: 6px 16px;
+    min-width: 170px;
+    border: none;
+    color: #0097ac;
+    font-size: 14px;
+    font-weight: 300;
+    appearance: none;
+
+    @media (max-width: $md4+px) {
+      width: 100%;
+      min-width: auto;
+      margin: 15px 0 0 0;
+    }
+  }
+
+}
 
 .pagination {
   display: flex;
@@ -86,12 +181,8 @@
 
   // .pagination__item
   &__item {
-    margin: 0 0 0 30px;
+    margin: 0 15px;
     color: #333333;
-
-    &:first-child {
-      margin: 0;
-    }
 
     &.active {
       position: relative;
@@ -113,7 +204,11 @@
 
   // .pagination__arrow
   &__arrow {
-    transition: all .3s ease 0s;
+    svg {
+      width: 23px;
+      height: 19px;
+    }
+
     @media (min-width: $md2+px) {
       &:hover {
         svg path {
@@ -139,16 +234,3 @@
     margin: 0 0 0 36px;
   }
 }
-
-
-//</ГОТОВЫЕ КЛАССЫ>=============================================================================================================
-//<EXTENDS>=============================================================================================================
-//%graystyle {
-//  transition: all .3s ease 0s;
-//  filter: grayscale(1);
-//}
-//
-//%graystyle-off {
-//  filter: grayscale(0);
-//}
-//</EXTENDS>=============================================================================================================

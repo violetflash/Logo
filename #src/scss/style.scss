@@ -79,7 +79,7 @@ body {
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ >=======================================================================
 @import "forms";
-@import "ui";
+//@import "ui";
 // @import "normalize";
 // @import "pages/swiper";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ >======================================================================
@@ -90,6 +90,7 @@ body {
 //@import "lightgallery";
 //@import "pagging";
 // @import "popup";
+@import "global";
 @import "header";
 @import "footer";
 @import "index";

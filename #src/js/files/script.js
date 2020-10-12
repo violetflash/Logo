@@ -239,22 +239,54 @@ if (document.querySelector('.filter')) {
     //
 }
 
-//CATALOG SORT
+//CATALOG
 if (document.querySelector('.catalog')) {
 
     //List / Grid switch
     let grid = document.querySelector('.catalog__grid');
     let list = document.querySelector('.catalog__list');
+    let products = document.querySelectorAll('.catalog__products .product');
 
     grid.addEventListener('click', function(e) {
         list.classList.remove('active');
         grid.classList.add('active');
+        for (let i = 0; i < products.length; i++) {
+            products[i].classList.remove('list');
+        }
     });
 
     list.addEventListener('click', function(e) {
         grid.classList.remove('active');
         list.classList.add('active');
+        for (let i = 0; i < products.length; i++) {
+            products[i].classList.add('list');
+        }
     });
+}
+
+//PAGINATION
+if (document.querySelector('.pagination')) {
+
+    //remove and make active on click
+    let pagLinks = document.querySelectorAll('.pagination__item');
+
+    for (let i = 0; i < pagLinks.length; i++) {
+        const pagLink = pagLinks[i];
+
+        pagLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            for (let i = 0; i < pagLinks.length; i++) {
+                pagLinks[i].classList.remove('active');
+            }
+            pagLink.classList.add('active');
+        });
+    }
+
+    //arrows work (actually dont)
+    let prevArrow = document.querySelector('.prev-arrow');
+    let nextArrow = document.querySelector('.next-arrow');
+    let activeLinks = document.querySelector('.pagination__item .active');
+
 }
 //= (/SCRIPTS) =====================================================================================
 
