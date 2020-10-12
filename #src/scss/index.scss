@@ -326,6 +326,7 @@
 }
 
 .about {
+  z-index: 30;
   &__container {
   }
 
@@ -421,15 +422,15 @@
 
   &__girl {
     position: absolute;
-    right: -130px;
-    bottom: -196px;
+    right: -140px;
+    bottom: -290px;
 
     @media (max-width: $md1+px) {
       display: none;
     }
 
     img {
-      width: 360px;
+      //width: 360px;
     }
   }
 }

@@ -339,26 +339,7 @@
 
   // .comparsion__compare
   &__compare {
-    padding: 5px 20px 4px 43px;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 900;
-    line-height: 24px;
-    text-transform: uppercase;
-    position: relative;
-    background-color: #1ab9ce;
-    border-radius: 20px;
-    border: none;
-    margin: 0 10px 0 0;
 
-    &::before {
-      position: absolute;
-      content: '';
-      width: 21px;
-      height: 21px;
-      left: 13px;
-      background: url('../images/icons/compare.png') left no-repeat;
-    }
   }
 
   // .comparsion__clear
@@ -380,6 +361,29 @@
       width: 20px;
       height: 22px;
     }
+  }
+}
+
+.compare {
+  padding: 5px 20px 4px 43px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 24px;
+  text-transform: uppercase;
+  position: relative;
+  background-color: #1ab9ce;
+  border-radius: 20px;
+  border: none;
+  margin: 0 10px 0 0;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 21px;
+    height: 21px;
+    left: 13px;
+    background: url('../images/icons/compare.png') left no-repeat;
   }
 }
 
@@ -483,7 +487,28 @@
   }
   
   &__products {
-    
+    .hover {
+      &__footer {
+        align-items: center;
+        margin: 0 0 20px 0;
+      }
+    }
+  }
+
+  .compare {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    background-color: transparent;
+    padding: 5px 20px 4px 32px;
+
+    &::before {
+      left: 0;
+    }
+    span {
+      text-transform: capitalize;
+      border-bottom: 1px dashed;
+    }
   }
 
 }

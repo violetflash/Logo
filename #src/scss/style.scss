@@ -95,6 +95,7 @@ body {
 @import "footer";
 @import "index";
 @import "catalog";
+@import "product";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ >=============================================================================
 
 .page {
@@ -612,12 +613,9 @@ body {
       flex: 0 1 100%;
     }
 
-    &__title {
-      margin: 0 0 16px 0;
-    }
-
     &__image {
       min-height: 205px;
+      height: 215px;
     }
 
     @media (min-width: $md2+px) {
@@ -870,6 +868,8 @@ body {
   pointer-events: all;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
 
   &__content {
     flex: 1 1 auto;
