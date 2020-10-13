@@ -153,6 +153,8 @@ if (document.querySelector('.search')) {
     });
 }
 
+
+//Range Slider (NOUISLIDER)
 if (document.querySelector('.price-filter')) {
 
     const priceSlider = document.querySelector('.price-filter__slider');

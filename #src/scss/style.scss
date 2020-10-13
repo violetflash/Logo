@@ -712,6 +712,8 @@ body {
   }
 
   &__label {
+    display: none;
+    margin: 0 0 10px 0;
   }
 
   .sale {
@@ -812,7 +814,6 @@ body {
 }
 
 .label {
-  display: none;
   color: #ffffff;
   font-size: 14px;
   font-weight: 900;
@@ -821,7 +822,6 @@ body {
   background-color: #fd8424;
   padding: 0 15px;
   border-radius: 20px;
-  margin: 0 0 10px 0;
   text-align: center;
   max-width: 250px;
 }

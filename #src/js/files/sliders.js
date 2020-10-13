@@ -34,15 +34,15 @@ function sliders_bild_callback(params) { }
 
 try {
   
-  if (document.querySelector('.mainslider')) {
+  if (document.querySelector('.slider')) {
 
-    let mainslider = new Swiper('.mainslider__body', {
+    let mainslider = new Swiper('.slider__body', {
   
       // effect: 'fade',
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      //   disableOnInteraction: false,
+      // },
       observer: true,
       observeParents: true,
       slidesPerView: 1,
@@ -59,7 +59,7 @@ try {
       //Dots
       */
       pagination: {
-        el: '.mainslider__dots',
+        el: '.slider__dots',
         clickable: true,
       },
       // Arrows
@@ -75,12 +75,12 @@ try {
       // }
     });
   
-    let mainsliderImages = document.querySelectorAll('.mainslider__image');
-    let mainsliderDots = document.querySelectorAll('.mainslider__dots .swiper-pagination-bullet');
+    let sliderImages = document.querySelectorAll('.slider__image');
+    let sliderDots = document.querySelectorAll('.slider__dots .swiper-pagination-bullet');
   
-    for (let index = 0; index < mainsliderImages.length; index++) {
-      const mainsliderImage = mainsliderImages[index + 1].querySelector('img').getAttribute('src');
-      mainsliderDots[index].style.backgroundImage = "url('" + mainsliderImage + "')";
+    for (let index = 0; index < sliderImages.length; index++) {
+      const sliderImage = sliderImages[index + 1].querySelector('img').getAttribute('src');
+      sliderDots[index].style.backgroundImage = "url('" + sliderImage + "')";
     }
   
   }
