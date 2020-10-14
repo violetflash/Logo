@@ -364,28 +364,7 @@
   }
 }
 
-.compare {
-  padding: 5px 20px 4px 43px;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 900;
-  line-height: 24px;
-  text-transform: uppercase;
-  position: relative;
-  background-color: #1ab9ce;
-  border-radius: 20px;
-  border: none;
-  margin: 0 10px 0 0;
 
-  &::before {
-    position: absolute;
-    content: '';
-    width: 21px;
-    height: 21px;
-    left: 13px;
-    background: url('../images/icons/compare.png') left no-repeat;
-  }
-}
 
 .manufacturers {
 }

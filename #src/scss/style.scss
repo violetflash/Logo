@@ -826,32 +826,7 @@ body {
   max-width: 250px;
 }
 
-.cart {
-  display: inline-block;
-  position: relative;
-  width: 40px;
-  height: 40px;
 
-  &::before {
-    content: "";
-    position: absolute;
-    background-color: #e6e6e6;
-    left: 0;
-    top: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: all 0.3s ease 0s;
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    background: url("../images/icons/header/cart-default.png") center center no-repeat;
-    width: 40px;
-    height: 40px;
-  }
-}
 
 
 .hover {
