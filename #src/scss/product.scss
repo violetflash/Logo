@@ -128,4 +128,39 @@
       }
     }
   }
+
+  &__amount {
+
+  }
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  &__input {
+    max-width: 56px;
+    padding: 10px;
+    text-align: center;
+    margin: 0 15px;
+    border: 2px solid #e5e5e5;
+    color: #999999;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  &__arrow {
+    cursor: pointer;
+    svg {
+      width: 19px;
+      height: 17px;
+    }
+
+    @media (min-width: $md2+px) {
+      &:hover {
+        svg path {
+          stroke: #fd8424;
+        }
+      }
+    }
+  }
 }

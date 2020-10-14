@@ -234,3 +234,28 @@
     margin: 0 0 0 36px;
   }
 }
+
+.price {
+  &__old {
+    color: #999999;
+    font-size: 18px;
+    font-weight: 300;
+    text-decoration: line-through;
+    text-align: right;
+    &::after {
+      font-size: 14px;
+      margin: 0 0 0 5px;
+    }
+  }
+
+  &__actual {
+    color: #333333;
+    font-size: 24px;
+    font-weight: 900;
+
+    &::after {
+      font-size: 18px;
+      margin: 0 0 0 5px;
+    }
+  }
+}
