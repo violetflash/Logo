@@ -3,8 +3,6 @@
   content: '₽';
 }
 
-
-
 .ibg {
   background-position: center;
   background-size: cover;
@@ -73,7 +71,6 @@
   }
 }
 
-
 .pagination {
   display: flex;
   align-items: center;
@@ -137,6 +134,112 @@
 
   .next-arrow {
     margin: 0 0 0 36px;
+  }
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  &__input {
+    max-width: 56px;
+    padding: 6px 10px 5px;
+    text-align: center;
+    margin: 0 15px;
+    border: 2px solid #e5e5e5;
+    color: #999999;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  &__button {
+    cursor: pointer;
+    svg {
+      width: 19px;
+      height: 17px;
+    }
+
+    @media (min-width: $md2+px) {
+      &:hover {
+        svg path {
+          stroke: #fd8424;
+        }
+      }
+    }
+  }
+}
+
+.checkbox {
+  position: relative;
+  display: block;
+  margin: 0 0 15px 0;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    &:checked + .checkbox__text::before {
+      border: 2px solid #009aaf;
+    }
+
+    &:checked + .checkbox__text::after {
+      opacity: 1;
+      transform: scale(1);
+      transition: all 0.15s cubic-bezier(0.41, 1.13, 0.79, 1.33);
+      transform-origin: center;
+    }
+  }
+
+  &__text {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    font-size: 16px;
+    width: 100%;
+    color: #666666;
+    letter-spacing: -0.3px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      align-items: flex-start;
+      margin: 0 12px 0 0;
+      flex: 0 0 15px;
+      height: 15px;
+      border: 2px solid #dadada;
+      left: 0;
+      top: 0;
+      width: 20px;
+      background: #fff;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 9px;
+      height: 9px;
+      left: 3px;
+      background-color: #53b5de;
+      transform: scale(0.5);
+      opacity: 0;
+      transition: all 0.15s cubic-bezier(0.47, 1.01, 0.75, 0.97);
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+    @media (min-width: $md2+px) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 }
 
