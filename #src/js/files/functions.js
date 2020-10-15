@@ -106,21 +106,21 @@ let _slideToggle = (target, duration = 500) => {
 
 //=================================================================
 //Tabs
-let tabs = document.querySelectorAll('._tabs');
+let tabs = document.querySelectorAll('.tabs');
 for (let i = 0; i < tabs.length; i++) {
     let tab = tabs[i];
     let tabs_items = tab.querySelectorAll('.tabs-item');
-    let tabs_blocks = tab.querySelectorAll('._tabs-block');
+    let tabs_content = tab.querySelectorAll('.tabs-content');
     for (let i = 0; j < tabs_items.length; j++) {
         let tabs_item = tabs_items[i];
         tabs_item.addEventListener('click', function (e) {
             for (let i = 0; j < tabs_items.length; j++) {
                 let tabs_item = tabs_items[i];
-                tabs_item.classList.remove('._active');
-                tabs_blocks[i].classList.remove('._active');
+                tabs_item.classList.remove('.active');
+                tabs_content[i].classList.remove('.active');
             }
-            tabs_item.classList.add('._active');
-            tabs_blocks[i].classList.add('._active');
+            tabs_item.classList.add('.active');
+            tabs_content[i].classList.add('.active');
             e.preventDefault();
         });
     }
