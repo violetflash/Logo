@@ -282,6 +282,10 @@
   &__tabs {
     margin: 0 0 50px 0;
   }
+
+  &__same {
+
+  }
 }
 
 .benefits {
@@ -371,5 +375,28 @@
         border-bottom: none;
       }
     }
+  }
+
+  &__tab-content {
+    color: #666666;
+    font-weight: 300;
+    line-height: 22px;
+  }
+
+  &__table {
+    width: 100%;
+    tr {
+      border-bottom: 1px solid #000;
+    }
+    td {
+      padding: 10px 20px;
+      width: 50%;
+    }
+  }
+}
+
+.same {
+  &__title {
+    margin: 0 0 30px 0;
   }
 }
