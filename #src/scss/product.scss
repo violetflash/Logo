@@ -278,9 +278,11 @@
       display: block;
     }
   }
+
+  &__tabs {
+    margin: 0 0 50px 0;
+  }
 }
-
-
 
 .benefits {
 
@@ -341,5 +343,33 @@
     font-size: 12px;
     font-weight: 300;
 
+  }
+}
+
+.tabs-card {
+  &__tab-box {
+    display: flex;
+  }
+
+  &__tab {
+    cursor: pointer;;
+    padding: 17px 30px;
+    font-size: 14px;
+    color: #72c9d4;
+    font-weight: 900;
+    line-height: 16px;
+    text-transform: uppercase;
+
+    span {
+      border-bottom: 2px dashed #72c9d4;
+    }
+    
+    &.active {
+      background-color: #72c9d4;
+      color: #fff;
+      span {
+        border-bottom: none;
+      }
+    }
   }
 }

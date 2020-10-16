@@ -370,3 +370,15 @@
     }
   }
 }
+
+.tabs-content {
+  display: none;
+  max-width: 850px;
+  background-color: #fafafa;
+  padding: 38px 26px 38px 33px;
+  min-height: 460px;
+
+  &.active {
+    display: block;
+  }
+}
