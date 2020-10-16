@@ -57,7 +57,7 @@ textarea {
     opacity: 0;
     visibility: hidden;
     &:checked + .checkbox__text::before {
-      background-image: url("../images/icons/check.svg");
+      background-image: url("../../images/icons/check.svg");
       background-color: #fff;
       background-position: center;
       background-repeat: no-repeat;

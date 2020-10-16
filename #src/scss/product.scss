@@ -353,6 +353,9 @@
 .tabs-card {
   &__tab-box {
     display: flex;
+    @media (max-width: $md4+px) {
+      flex-wrap: wrap;
+    }  
   }
 
   &__tab {
@@ -363,6 +366,13 @@
     font-weight: 900;
     line-height: 16px;
     text-transform: uppercase;
+    @media (max-width: $md3+px) {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+    @media (max-width: $md4+px) {
+      flex: 1 1 100%;
+    }  
 
     span {
       border-bottom: 2px dashed #72c9d4;
@@ -381,17 +391,55 @@
     color: #666666;
     font-weight: 300;
     line-height: 22px;
+    background-color: #fafafa;
+    padding: 38px 26px 38px 33px;
+    min-height: 460px;
+    @media (max-width: $md3+px) {
+      margin: 0 -20px;
+      padding: 20px;
+    }  
   }
 
   &__table {
     width: 100%;
+    border-collapse: collapse;
     tr {
-      border-bottom: 1px solid #000;
+      border-bottom: 1px solid #ccc;
+      @media (max-width: $md4+px) {
+        display: flex;
+        flex-wrap: wrap;
+      }
     }
     td {
       padding: 10px 20px;
       width: 50%;
+      @media (max-width: $md3+px) {
+        padding: 10px 0;
+      }
+      @media (max-width: $md4+px) {
+        width: 100%;
+      }
     }
+  }
+
+  &__label {
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 300;
+    color: #333;
+    line-height: 1.2;
+  }
+
+  &__value {
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 300;
+    color: #999;
+    line-height: 1.2;
+    @media (max-width: $md4+px) {
+      text-align: right;
+    }  
+
   }
 }
 

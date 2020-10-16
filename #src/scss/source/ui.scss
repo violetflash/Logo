@@ -41,7 +41,7 @@
     &::after {
       position: absolute;
       content: '';
-      background: url('../images/icons/spoiler-default.png') center no-repeat;
+      background: url('../../images/icons/spoiler-default.png') center no-repeat;
       width: 10px;
       height: 10px;
       top: 3px;
@@ -198,7 +198,7 @@
 
   &__text {
     display: inline-flex;
-    align-items: center;
+    //align-items: center;
     position: relative;
     font-size: 16px;
     width: 100%;
@@ -215,7 +215,6 @@
       border: 2px solid #dadada;
       left: 0;
       top: 0;
-      width: 20px;
       background: #fff;
     }
 
