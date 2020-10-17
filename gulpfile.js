@@ -321,7 +321,7 @@ gulp.task('svgSprite', function () {
 //функция подключения шрифтов к стилям
 function fontsStyle(params) {
 
-    let file_content = fs.readFileSync(source_folder + '/scss/fonts.scss');
+    let file_content = fs.readFileSync(source_folder + '/scss/source/fonts.scss');
     if (file_content == '') {
         fs.writeFile(source_folder + '/scss/fonts.scss', '', cb);
         return fs.readdir(path.build.fonts, function (err, items) {
@@ -331,7 +331,7 @@ function fontsStyle(params) {
                     let fontname = items[i].split('.');
                     fontname = fontname[0];
                     if (c_fontname != fontname) {
-                        fs.appendFile(source_folder + '/scss/fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+                        fs.appendFile(source_folder + '/scss/source/fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
                     }
                     c_fontname = fontname;
                 }
