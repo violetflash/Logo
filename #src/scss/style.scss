@@ -1170,6 +1170,7 @@ body {
     &:checked + .checkbox__text::before {
       background-image: none;
       background-color: #f68038;
+      border: none;
     }
 
     &:checked + .checkbox__text {
@@ -1211,6 +1212,10 @@ body {
       @media (max-width: $md1+px) {
         display: none;
       }
+    }
+
+    &::after {
+      display: none;
     }
   }
 
